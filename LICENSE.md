@@ -1,0 +1,27 @@
+SA Open Metadata Licence v1.1
+
+
+2.  Definitions
+
+The “Owner” is the European Union represented by the European Commission, which is the original licensor and/or controls the copyright and any other intellectual and industrial property rights related to the Work.
+The “Work” is the information and/or data offered to You under this Licence, according to the “Copyright Notice”:
+
+Original author: Goedele Van der Spiegel
+
+"You" means the natural or legal person, or body of persons corporate or incorporate, acquiring rights under this licence.
+"Contributor" means the natural or legal person whose Work is, by agreement with the European Commission, provided under this Licence.
+"Use" means doing any act which is restricted by copyright or database right, whether in the original medium or in any other medium, and includes without limitation distributing, copying, adapting, modifying as may be technically necessary to use it in a different mode or format. It includes "re-Use", meaning the use, communication to the public and/or distribution of the Works for purposes other than the initial purpose for which the Work was produced.
+
+3. Rights
+In accordance to Commission Decision 2011/833/EU, You are herewith granted a worldwide, royalty-free, perpetual, non-exclusive licence to Use and re-Use the Works and any modifications thereof for any commercial and non-commercial purpose allowed by the law and provided that the following conditions are met:
+a)       Distributions or communication to the public must retain the above Copyright Notice;
+b)       Distributions must retain the following “No Warranty” disclaimer;
+c)       Where possible and practical, distributions or communication to the public will provide a link to the Joinup platform;
+d)       Acts directed to mislead others or misrepresent the Work, its content or source are prohibited;
+e)       You will not use the name of the European Commission and that of its Contributor(s) to endorse or promote products and services derived from the Use of the Work without specific prior written permission.
+4.      No Warranty
+EACH WORK IS PROVIDED "AS IS" WITHOUT REPRESENTATIONS, WARRANTIES, OBLIGATIONS AND LIABILITIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, TO THE FULL EXTENT PERMITTED BY LAW INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTY OF MERCHANTABILITY, INTEGRATION, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE.
+EXCEPT IN THE CASES OF WILFUL MISCONDUCT OR DAMAGES DIRECTLY CAUSED TO NATURAL PERSONS, NEITHER EUROPEAN UNION NOR ITS CONTRIBUTOR(S) WILL BE LIABLE FOR ANY INCIDENTAL, CONSEQUENTIAL, DIRECT OR INDIRECT DAMAGES INCLUDING BUT NOT LIMITED TO THE LOSS OF DATA, LOST PROFITS, OR ANY OTHER FINANCIAL LOSS ARISING FROM THE USE OF, OR INABILITY TO USE, EVEN IF THE EUROPEAN UNION HAS BEEN NOTIFIED OF THE POSSIBILITY OF SUCH LOSS, DAMAGES, CLAIMS OR COSTS OR FOR ANY CLAIM BY ANY THIRD PARTY. HOWEVER, THE LICENSOR WILL BE LIABLE UNDER STATUTORY PRODUCT LIABILITY LAWS AS FAR SUCH LAWS APPLY TO THE WORK.
+
+5.      Governing Law
+This licence is governed by the laws of the jurisdiction in which the first Contributor listed in the Copyright Notice has its principal place of business, unless otherwise specified by this Contributor.
