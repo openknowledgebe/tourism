@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>CORNET - Toerisme Vocabularium</title>
+	<meta name="template" content="MultiMarkdown"/>
+</head>
+<body>
+
+<section id='abstract'>
+</section>
+
+<p>Released under the <a href="https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11">ISA Open Metadata v1.1</a> license.</p>
+<section>
+
+<h1 id="inleiding">Inleiding</h1>
+
+<p>Dit document beschrijft het CORNET conceptueel model en de serialisatie in RDF.</p>
+</section>
+<section>
+
+<h1 id="uristrategie">URI Strategie</h1>
+
+<p>De belangrijkste motivatie om te kiezen voor een URI-strategie is dat toepassingen en catalogi op een eenduidige manier kunnen verwijzen naar services die bestaan bij de verschillende overheden en gebruikers. Dit zal het hergebruik van de services maximaliseren en de impact bij wijzigingen voor implementaties minimaliseren. Dat kan aangezien alle dergelijke services op dezelfde manier hun resources toegankelijk maken.</p>
+
+<p>Het basispatroon dat deze strategie vervult is (in lijn met http://www.opendataforum.info/Docs/URI_strategie_versie2):</p>
+
+<pre><code>http://{domein}/{type}/{concept}/{referentie}
+</code></pre>
+<section>
+
+<h2 id="domein">Domein</h2>
+
+<p>Het domein bestaat uit het internet-domein en een pad. Het is best zo dat het domein van de URI een referentie bevat naar de bron waar het vandaan komt. </p>
+
+<p>Om het domein herkenbaar te houden voor ontwikkelaars en gebruikers, is het belangrijk om een generiek domein te voorzien in het belang van verschillende diensten die gecentraliseerd zijn rond een bepaald domein of sector.</p>
+
+<p>Bvb. {service}.data.localgov.be/ of data.localgov.be/{service}/ maar dit kan eventueel uitgebreid worden naar {eigendomein}/{eigenpad}/{service} of {service}.{eigendomein}/{eigenpad}.</p>
+</section>
+<section>
+
+<h2 id="type">Type</h2>
+
+<p>Het type duidt op het soort service waarop aanspraak gemaakt wordt en dit heeft impact op hoe de referentie kan gebruikt worden.</p>
+
+<p>Er zijn 2 types die minimaal dienen ondersteunt te worden:</p>
+
+<ul>
+<li>id: de referentie verwijst naar een concrete instantie van het concept</li>
+<li>lijst: een referentie is niet nodig, de lijst van concepten of van types concepten (indien geen concept wordt opgegeven) in het domein wordt weergegeven.</li>
+</ul>
+
+<p>Op een lijst kunnen geavanceerdere operaties uitgevoerd worden zoals een custom filter dat kan toegepast worden een bepaald type concept of op het gehele domein of zoeken op tekstwaarde van een bepaald veld in het domein (al dan niet beperkt binnen een bepaald concept). Deze actie wordt meegegeven in de request (bvb. via de url parameters).</p>
+
+<p>Daarnaast zijn er ook nog andere types mogelijk zoals een concretisatie van id (rijksregisternummer &#8220;rrk&#8221; of ondernemingsnummer &#8220;kbo&#8221;.</p>
+</section>
+<section>
+
+<h2 id="concept">Concept</h2>
+
+<p>Het type duidt aan wat voor soort identiteit het gaat waarnaar verwezen wordt met de identifier. In het bijzonder zijn hier de geldige concepten (met Nederlandstalige terminologie):</p>
+
+<ul>
+<li>Concepten
+
+<ul>
+<li>persoon en persoonsrelatie</li>
+<li>organisatie en organisatierelatie</li>
+<li>contactinformatie</li>
+<li>locatie</li>
+<li>adres</li>
+<li>product</li>
+</ul></li>
+</ul>
+</section>
+<section>
+
+<h2 id="resources">Resources</h2>
+
+<p>Om all attributen en relaties van een specifiek concept te krijgen, gekenmerkt aan de hand van zijn identifier gebruiken we volgende uri:</p>
+
+<pre><code>http://{domein}/id/{concept}/{referentie}
+</code></pre>
+
+<p>Het resultaat van deze vraag is een document beschreven volgens OSLO (RDF of OSLO-XML) dat de beoogde instantie van het concept beschrijft, of derefereert.</p>
+
+<p>Voorbeeld:</p>
+
+<p>Het bevragen van een resource, een ‘READ’ operatie, vertaalt zich bij een REST Service naar een GET request.</p>
+
+<pre><code>http://example.com/id/organisatie
+</code></pre>
+
+<p>Vaak zal in de praktijk een resource gekenmerkt worden door een specifiek type &#8216;id&#8217; zoals bijvoorbeeld KBO-nummer. Dit is zeker het geval indien meerdere mogelijkheden tot mapping zijn:</p>
+
+<pre><code>http://example.com/kbo/organisatie
+</code></pre>
+</section>
+</section>
+
+<p><section></p>
+
+<h1 id="namespaces">Namespaces</h1>
+
+<p>De namespace van het CORNET vocabularium is:</p>
+
+<pre><code>http://purl.org/cornet/
+</code></pre>
+<section>
+
+<h2 id="rdf">RDF</h2>
+
+<p>Het RDF schema maak optimaal gebruik van bestaande schema’s en vocabularies. Dit is belangrijk zodat toepassingen en andere afgeleide schema’s zo makkelijk gelinkt kunnen worden aan het OSLO RDF-schema zonder dat daarvoor eerst complexe mappings gemaakt moeten worden tussen vocabularies voor courant gebruikte object, types en kenmerken in de beschrijving van de uitgewisselde gegevens. Bovendien garandeert hergebruik van bestaande schema’s compatibiliteit en herkenbaarheid op langere termijn van het OSLO RDF-schema. Een bijkomend voordeel is dat de set eigen definities in het OSLO RDF-schema beperkt blijft zodat deze makkelijk te ondersteunen blijft.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Namespace</th>
+	<th style="text-align:left;">: Prefix :</th>
+	<th style="text-align:left;">Beheer :</th>
+	<th style="text-align:left;">Domein</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/ns/org</td>
+	<td style="text-align:left;">org</td>
+	<td style="text-align:left;"><a href="http://www.w3.org/2011/gld/wiki/Main_Page">W3C GLD</a></td>
+	<td style="text-align:left;">Organisaties</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/ns/regorg</td>
+	<td style="text-align:left;">rov</td>
+	<td style="text-align:left;">W3C GLD</td>
+	<td style="text-align:left;">Geregistreerde</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Organisaties</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/ns/person</td>
+	<td style="text-align:left;">person</td>
+	<td style="text-align:left;"><a href="http://joinup.ec.europa.eu/asset/core_person/description">ISA</a></td>
+	<td style="text-align:left;">Personen</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/ns/locn</td>
+	<td style="text-align:left;">locn</td>
+	<td style="text-align:left;">ISA(http://joinup.ec.europa.eu/asset/core_location/home)</td>
+	<td style="text-align:left;">Locaties</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://purl.org/vocab/cpsv</td>
+	<td style="text-align:left;">cpsv</td>
+	<td style="text-align:left;"><a href="http://joinup.ec.europa.eu/asset/core_public_service/home">ISA</a></td>
+	<td style="text-align:left;">Publieke dienstverlening</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://purl.org/dc/terms/</td>
+	<td style="text-align:left;">dcterms</td>
+	<td style="text-align:left;"><a href="http://dublincore.org/about/organization/">DCMA</a></td>
+	<td style="text-align:left;">Metadata</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://schema.org/</td>
+	<td style="text-align:left;">schema</td>
+	<td style="text-align:left;">]schema.org](http://schema.org/docs/schemas.html)</td>
+	<td style="text-align:left;">Markup, Metadata</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/2006/vcard/ns</td>
+	<td style="text-align:left;">vcard</td>
+	<td style="text-align:left;">W3C</td>
+	<td style="text-align:left;">Contactgegevens</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/ns/adms</td>
+	<td style="text-align:left;">adms</td>
+	<td style="text-align:left;"><a href="https://dvcs.w3.org/hg/gld/raw-file/default/adms/index.html">WRC GLD</a></td>
+	<td style="text-align:left;">Standaarden, Codelijsten</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">en Taxonomien</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/2006/time</td>
+	<td style="text-align:left;">time</td>
+	<td style="text-align:left;"><a href="http://www.w3.org/TR/owl-time/">W3C</a></td>
+	<td style="text-align:left;">Tijdsaanduiding</td>
+</tr>
+<tr>
+	<td style="text-align:left;">http://www.w3.org/ns/prov</td>
+	<td style="text-align:left;">prov</td>
+	<td style="text-align:left;"><a href="http://www.w3.org/TR/prov-o/">W3C</a></td>
+	<td style="text-align:left;">Herkomst</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!--- Info about the scripts below: http://www.w3.org/respec/ref.html -->
+<script src='respec-w3c-common.js'
+        async class='remove'>
+</script>
+<script class='remove'>
+  var respecConfig = {
+      // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+      specStatus:           "unofficial",
+      
+      // the specification's short name, as in http://www.w3.org/TR/short-name/
+      shortName:            "cornet-spec",
+      
+      // licensing
+      additionalCopyrightHolders: "CORNET",
+
+      // if your specification has a subtitle that goes below the main
+      // formal title, define it here
+      // subtitle   :  "an excellent document",
+
+      // if you wish the publication date to be other than the last modification, set this
+      publishDate:  "2015-02-12",
+
+      // if the specification's copyright date is a range of years, specify
+      // the start date here:
+      copyrightStart: "2015",
+
+      // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+      // and its maturity status
+      // previousPublishDate:  "1977-03-15",
+      // previousMaturity:  "WD",
+
+      // if there a publicly available Editor's Draft, this is the link
+      // edDraftURI:           "http://berjon.com/",
+
+      // if this is a LCWD, uncomment and set the end of its review period
+      // lcEnd: "2009-08-05",
+
+      // editors, add as many as you like
+      // only "name" is required
+      editors:  [
+          {
+                name:       "Laurens De Vocht"
+          ,   mailto:     "laurens.devocht@ugent.be"
+          ,   company:    "Ghent University - iMinds"
+          ,   companyURL: "http://ugent.be"
+          },
+        {
+                name:       "Raf Buyle"
+          ,   mailto:     "raf.buyle@onmicrosoft.be"
+          ,   company:    "Open Knowledge Belgium"
+          ,   companyURL: "http://okfn.be"
+          },
+{
+                name:       "Wouter Van den Bosch"
+          ,   mailto:     "wouter.vandenbosch@iminds.be"
+          ,   company:    "iMinds"
+          ,   companyURL: "http://iminds.be"
+          },
+{
+                name:       "Bruno Koninckx"
+          ,   mailto:     "bruno.koninckx@thomasmore.be "
+          ,   company:    "Thomase More"
+          ,   companyURL: "http://thomasmore.be"
+          }
+      ],
+      
+      // name of the WG
+      // wg:           "OSLO Werkgroep",
+      
+      // URI of the public WG page
+      // wgURI:        "http://example.org/really-cool-wg",
+      
+      // name (without the @w3c.org) of the public mailing to which comments are due
+      // wgPublicList: "spec-writers-anonymous",
+      
+      // URI of the patent status for this WG, for Rec-track documents
+      // !!!! IMPORTANT !!!!
+      // This is important for Rec-track documents, do not copy a patent URI from a random
+      // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+      // Team Contact.
+      // wgPatentURI:  "",
+      // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+  };
+</script>
+
+</body>
+</html>
