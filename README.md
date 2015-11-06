@@ -7,6 +7,6 @@ The specification is the result of a public-private partnership initiated by Mem
 
 This Github instance allows us to collaborate on a shared vocabulay on Tourism and Recreation, the consortium will vote on the definitive toolset.
 
-The reference lists that accompany this document are managed on a [shared spreadsheet](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+The reference lists that accompany this document are managed on a [shared spreadsheet](https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU).
 
 Any requests regarding the specification or the website should be done by listing an issue on this repository.
