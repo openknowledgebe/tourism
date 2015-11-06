@@ -1,0 +1,3696 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="en" prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Open Standard for Tourism Ecosystems Data</title>
+	<meta content="MultiMarkdown" name="template" />
+<style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #ff4500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+</style><link rel="stylesheet" href="w3c-unofficial.css" />
+<!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
+</head>
+<body class="h-entry" role="document" id="respecDocument"><div class="head" role="contentinfo" id="respecHeader">
+  <p>
+    
+  </p>
+  <h1 property="dcterms:title" id="title" class="title p-name">Open Standard for Tourism Ecosystems Data</h1>
+  
+    <h2 id="subtitle" property="bibo:subtitle">Version 0.9.0 of w3id.org/ost/ns</h2>
+  
+  <h2 content="2015-11-03T23:00:00.000Z" datatype="xsd:dateTime" property="dcterms:issued" id="draft-04-november-2015">Draft <time datetime="2015-11-04" class="dt-published">04 November 2015</time></h2>
+  <dl>
+    
+    
+    
+    
+    
+    
+    
+    <dt>Editors:</dt>
+    <dd inlist="" rel="bibo:editor" class="p-author h-card vcard"><span typeof="foaf:Person"><span class="p-name fn" property="foaf:name">Raf Buyle</span>, <a href="http://okfn.be" class="p-org org h-org h-card" rel="foaf:workplaceHomepage">Open Knowledge Belgium</a>, <span class="ed_mailto"><a href="mailto:raf.buyle@onmicrosoft.be" rel="foaf:mbox" class="u-email email">raf.buyle@onmicrosoft.be</a></span></span>
+</dd>
+<dd inlist="" rel="bibo:editor" class="p-author h-card vcard"><span typeof="foaf:Person"><span class="p-name fn" property="foaf:name">Bruno Koninckx</span>, <a href="http://thomasmore.be" class="p-org org h-org h-card" rel="foaf:workplaceHomepage">Thomase More</a>, <span class="ed_mailto"><a href="mailto:bruno.koninckx@thomasmore.be " rel="foaf:mbox" class="u-email email">bruno.koninckx@thomasmore.be </a></span></span>
+</dd>
+<dd inlist="" rel="bibo:editor" class="p-author h-card vcard"><span typeof="foaf:Person"><span class="p-name fn" property="foaf:name">Erik Mannens</span>, <a href="http://iminds.be" class="p-org org h-org h-card" rel="foaf:workplaceHomepage">Ghent University - iMinds - Multimedia Lab</a>, <span class="ed_mailto"><a href="mailto:erik.mannens@ugent.be" rel="foaf:mbox" class="u-email email">erik.mannens@ugent.be</a></span></span>
+</dd>
+
+    
+      <dt>Authors:</dt>
+      <dd rel="dcterms:contributor" class="p-author h-card vcard"><span typeof="foaf:Person"><span class="p-name fn" property="foaf:name">Laurens De Vocht</span>, <a href="http://iminds.be" class="p-org org h-org h-card" rel="foaf:workplaceHomepage">Ghent University - iMinds - Multimedia Lab</a>, <span class="ed_mailto"><a href="mailto:laurens.devocht@ugent.be" rel="foaf:mbox" class="u-email email">laurens.devocht@ugent.be</a></span></span>
+</dd>
+<dd rel="dcterms:contributor" class="p-author h-card vcard"><span typeof="foaf:Person"><span class="p-name fn" property="foaf:name">Wouter Van den Bosch</span>, <a href="http://iminds.be" class="p-org org h-org h-card" rel="foaf:workplaceHomepage">iMinds - Living labs</a>, <span class="ed_mailto"><a href="mailto:wouter.vandenbosch@iminds.be" rel="foaf:mbox" class="u-email email">wouter.vandenbosch@iminds.be</a></span></span>
+</dd>
+
+    
+    
+  </dl>
+  
+  
+  
+  
+    
+      <p class="copyright">Hosted by Open Knowledge Belgium,  2014-2015. This vocabulary is published under the CC BY 4.0 license.</p>
+    
+  
+  <hr />
+</div>
+
+<section id="abstract" class="introductory" property="dcterms:abstract" datatype="" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter"><h2 aria-level="1" role="heading" id="h2_abstract">Abstract</h2><p>
+This specification can and will bring a solution to one of the main issues in the field of application development for the tourism and leisure sector. A lot of projects fail because the underlying systems and databases are too difficult to connect or because it is too costly to do. This is a reason why tourism organisations are reluctant to commision new applications, and it also slows down innovation in this field.
+</p></section><section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter"><h2 aria-level="1" role="heading" id="h2_sotd">Status of This Document</h2>
+  
+    <p>
+      This document is merely a public working draft of a potential specification. It has
+      no official standing of any kind and does not represent the support or consensus of any
+      standards organisation.
+    </p>
+    
+  
+</section><section id="toc"><h2 class="introductory" aria-level="1" role="heading" id="h2_toc">Table of Contents</h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#license-and-liability" class="tocxref"><span class="secno">1. </span>License and Liability</a></li><li class="tocline"><a href="#conformance-statement" class="tocxref"><span class="secno">2. </span>Conformance Statement</a></li><li class="tocline"><a href="#contributors-1" class="tocxref"><span class="secno">3. </span>Contributors</a></li><li class="tocline"><a href="#about-1" class="tocxref"><span class="secno">4. </span>About</a><ul class="toc"><li class="tocline"><a href="#cause-and-context" class="tocxref"><span class="secno">4.1 </span>Cause and Context</a></li><li class="tocline"><a href="#format-1" class="tocxref"><span class="secno">4.2 </span>Format</a></li><li class="tocline"><a href="#data-and-metadata" class="tocxref"><span class="secno">4.3 </span>Data and Metadata</a><ul class="toc"><li class="tocline"><a href="#data-types" class="tocxref"><span class="secno">4.3.1 </span>Data types</a><ul class="toc"><li class="tocline"><a href="#text-1" class="tocxref"><span class="secno">4.3.1.1 </span>Text</a></li><li class="tocline"><a href="#datetime-1" class="tocxref"><span class="secno">4.3.1.2 </span>DateTime</a></li><li class="tocline"><a href="#periodoftime-1" class="tocxref"><span class="secno">4.3.1.3 </span>PeriodOfTime</a></li><li class="tocline"><a href="#uri-1" class="tocxref"><span class="secno">4.3.1.4 </span>URI</a></li><li class="tocline"><a href="#boolean-1" class="tocxref"><span class="secno">4.3.1.5 </span>Boolean</a></li><li class="tocline"><a href="#number-1" class="tocxref"><span class="secno">4.3.1.6 </span>Number</a></li></ul></li><li class="tocline"><a href="#metadata-types" class="tocxref"><span class="secno">4.3.2 </span>Metadata types</a><ul class="toc"><li class="tocline"><a href="#code-1" class="tocxref"><span class="secno">4.3.2.1 </span>Code</a></li><li class="tocline"><a href="#identification-1" class="tocxref"><span class="secno">4.3.2.2 </span>Identification</a></li></ul></li></ul></li></ul></li><li class="tocline"><a href="#domain-model" class="tocxref"><span class="secno">5. </span>Domain Model</a><ul class="toc"><li class="tocline"><a href="#scope-1" class="tocxref"><span class="secno">5.1 </span>Scope</a></li><li class="tocline"><a href="#related-domains-not-in-scope" class="tocxref"><span class="secno">5.2 </span>Related domains not in scope</a></li></ul></li><li class="tocline"><a href="#offering-1" class="tocxref"><span class="secno">6. </span>Offering</a><ul class="toc"><li class="tocline"><a href="#product-1" class="tocxref"><span class="secno">6.1 </span>Product</a><ul class="toc"><li class="tocline"><a href="#arrangement-1" class="tocxref"><span class="secno">6.1.1 </span>Arrangement</a></li><li class="tocline"><a href="#attraction-1" class="tocxref"><span class="secno">6.1.2 </span>Attraction</a></li><li class="tocline"><a href="#event-1" class="tocxref"><span class="secno">6.1.3 </span>Event</a></li><li class="tocline"><a href="#lodging-1" class="tocxref"><span class="secno">6.1.4 </span>Lodging</a></li><li class="tocline"><a href="#mice-1" class="tocxref"><span class="secno">6.1.5 </span>Mice</a></li><li class="tocline"><a href="#reca-1" class="tocxref"><span class="secno">6.1.6 </span>Reca</a></li><li class="tocline"><a href="#regional-product" class="tocxref"><span class="secno">6.1.7 </span>Regional Product</a></li><li class="tocline"><a href="#route-1" class="tocxref"><span class="secno">6.1.8 </span>Route</a></li><li class="tocline"><a href="#factoid-1" class="tocxref"><span class="secno">6.1.9 </span>Factoid</a></li></ul></li><li class="tocline"><a href="#organisation-1" class="tocxref"><span class="secno">6.2 </span>Organisation</a></li><li class="tocline"><a href="#price-1" class="tocxref"><span class="secno">6.3 </span>Price</a></li></ul></li><li class="tocline"><a href="#experience-1" class="tocxref"><span class="secno">7. </span>Experience</a><ul class="toc"><li class="tocline"><a href="#productdescription-1" class="tocxref"><span class="secno">7.1 </span>ProductDescription</a></li><li class="tocline"><a href="#creativework-1" class="tocxref"><span class="secno">7.2 </span>CreativeWork</a></li><li class="tocline"><a href="#productchannel-1" class="tocxref"><span class="secno">7.3 </span>ProductChannel</a></li><li class="tocline"><a href="#productselection-1" class="tocxref"><span class="secno">7.4 </span>ProductSelection</a></li><li class="tocline"><a href="#publicationissue-1" class="tocxref"><span class="secno">7.5 </span>PublicationIssue</a></li></ul></li><li class="tocline"><a href="#availability-1" class="tocxref"><span class="secno">8. </span>Availability</a><ul class="toc"><li class="tocline"><a href="#location-1" class="tocxref"><span class="secno">8.1 </span>Location</a></li><li class="tocline"><a href="#tourism-region" class="tocxref"><span class="secno">8.2 </span>Tourism Region</a></li><li class="tocline"><a href="#geometry-1" class="tocxref"><span class="secno">8.3 </span>Geometry</a></li><li class="tocline"><a href="#address-1" class="tocxref"><span class="secno">8.4 </span>Address</a></li><li class="tocline"><a href="#location-discovery" class="tocxref"><span class="secno">8.5 </span>Location Discovery</a></li><li class="tocline"><a href="#opening-hours" class="tocxref"><span class="secno">8.6 </span>Opening Hours</a><ul class="toc"><li class="tocline"><a href="#opening-hours-specification" class="tocxref"><span class="secno">8.6.1 </span>Opening Hours Specification</a></li><li class="tocline"><a href="#opening-hours-calendar" class="tocxref"><span class="secno">8.6.2 </span>Opening Hours Calendar</a></li></ul></li></ul></li><li class="tocline"><a href="#demand-1" class="tocxref"><span class="secno">9. </span>Demand</a><ul class="toc"><li class="tocline"><a href="#statistics-1" class="tocxref"><span class="secno">9.1 </span>Statistics</a></li><li class="tocline"><a href="#column-1" class="tocxref"><span class="secno">9.2 </span>Column</a></li><li class="tocline"><a href="#report-1" class="tocxref"><span class="secno">9.3 </span>Report</a></li></ul></li><li class="tocline"><a href="#mapping-1" class="tocxref"><span class="secno">10. </span>Mapping</a><ul class="toc"><li class="tocline"><a href="#namespaces-1" class="tocxref"><span class="secno">10.1 </span>Namespaces</a></li><li class="tocline"><a href="#mappings-1" class="tocxref"><span class="secno">10.2 </span>Mappings</a><ul class="toc"><li class="tocline"><a href="#primary-class-mappings" class="tocxref"><span class="secno">10.2.1 </span>Primary Class Mappings</a></li><li class="tocline"><a href="#secondary-class-mappings" class="tocxref"><span class="secno">10.2.2 </span>Secondary Class Mappings</a></li><li class="tocline"><a href="#product-and-all-its-subclasses" class="tocxref"><span class="secno">10.2.3 </span>Product and all its subclasses</a></li><li class="tocline"><a href="#route-2" class="tocxref"><span class="secno">10.2.4 </span>Route</a></li><li class="tocline"><a href="#signage-1" class="tocxref"><span class="secno">10.2.5 </span>Signage</a></li><li class="tocline"><a href="#organization-1" class="tocxref"><span class="secno">10.2.6 </span>Organization</a></li><li class="tocline"><a href="#price-2" class="tocxref"><span class="secno">10.2.7 </span>Price</a></li><li class="tocline"><a href="#creativework-2" class="tocxref"><span class="secno">10.2.8 </span>CreativeWork</a></li><li class="tocline"><a href="#productdescription-2" class="tocxref"><span class="secno">10.2.9 </span>ProductDescription</a></li><li class="tocline"><a href="#productselection-2" class="tocxref"><span class="secno">10.2.10 </span>ProductSelection</a></li><li class="tocline"><a href="#productchannel-2" class="tocxref"><span class="secno">10.2.11 </span>ProductChannel</a></li><li class="tocline"><a href="#publicationissue-2" class="tocxref"><span class="secno">10.2.12 </span>PublicationIssue</a></li><li class="tocline"><a href="#openinghours-1" class="tocxref"><span class="secno">10.2.13 </span>OpeningHours</a></li><li class="tocline"><a href="#location-geometry-and-address" class="tocxref"><span class="secno">10.2.14 </span>Location, Geometry and Address</a></li><li class="tocline"><a href="#statistics-2" class="tocxref"><span class="secno">10.2.15 </span>Statistics</a></li><li class="tocline"><a href="#report-2" class="tocxref"><span class="secno">10.2.16 </span>Report</a></li><li class="tocline"><a href="#column-2" class="tocxref"><span class="secno">10.2.17 </span>Column</a></li><li class="tocline"><a href="#code-2" class="tocxref"><span class="secno">10.2.18 </span>Code</a></li><li class="tocline"><a href="#identification-2" class="tocxref"><span class="secno">10.2.19 </span>Identification</a></li></ul></li></ul></li><li class="tocline"><a href="#change-history" class="tocxref"><span class="secno">11. </span>Change History</a></li></ul></section>
+
+<hr />
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="license-and-liability">
+
+
+<!--OddPage-->
+<h2 id="licenseandliability" aria-level="1" role="heading"><span class="secno">1. </span>License and Liability</h2>
+
+<p><a href="http://creativecommons.org/licenses/by/4.0/" rel="license"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0" class="cc" alt="Creative Commons License" /></a><br /><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text" xmlns:dct="http://purl.org/dc/terms/">Open Standard for Tourism Ecosystems Data</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://www.openknowledge.be" xmlns:cc="http://creativecommons.org/ns#">Open Knowledge Belgium</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>.<br />Based on a work at <a rel="dct:source" href="http://w3id.org/ost/ns" xmlns:dct="http://purl.org/dc/terms/">http://w3id.org/ost/ns</a>.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="conformance-statement">
+
+
+<!--OddPage-->
+<h2 id="conformancestatement" aria-level="1" role="heading"><span class="secno">2. </span>Conformance Statement</h2>
+
+<p>A conformant implementation of this vocabulary <em class="rfc2119" title="MUST">MUST</em> understand all vocabulary terms defined in this document.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="contributors-1">
+
+
+<!--OddPage-->
+<h2 id="contributors" aria-level="1" role="heading"><span class="secno">3. </span>Contributors</h2>
+
+<p>The project of which this specification is a result, is quite unique in that it brings together different actors both in public and private sector sector. By working together to set up the domain model, we ensure that it is shared and supported by the most important players in this sector. This bottom-up approach proves to be far more effective than a top-down one in stimulation different players to work together. This will have an impact on how tourism organisations and other players in this sector who will develop new databases, websites and mobile applications. Also, other sectors, like the heritage and museum sector, can benefit from the same approach. If they adopt the same domain model, it will be easier to exchange data between these different, but closely related, sectors.</p>
+
+<p>The ‘user group’ of about 35–40 users consists of: SME’s, not-for-profit organizations involved in culture and tourism activities, representatives from the provinces and some of the major cities in the region. The fact that the user group is composed out of businesses, public administrations and not-for-profit organizations.</p>
+<table>
+ <tbody><tr>
+ <td>Name</td>
+ <td>Organization</td>
+ </tr>
+ <tr>
+ <td>Erik Mertz</td>
+ <td>7 Scenes</td>
+ </tr>
+ <tr>
+ <td>Carolien Willen</td>
+ <td>Informatie Vlaanderen</td>
+ </tr>
+ <tr>
+ <td>Jan Bossier</td>
+ <td>Artspot</td>
+ </tr>
+ <tr>
+ <td>Doenja Van Gampelaere</td>
+ <td>CIB Vlaanderen vzw</td>
+ </tr>
+ <tr>
+ <td>Luk Verhelst</td>
+ <td>Cultuurnet</td>
+ </tr>
+ <tr>
+ <td>Eric Smets</td>
+ <td>FKS</td>
+ </tr>
+ <tr>
+ <td>Reen Simoen</td>
+ <td>Grote Routepaden</td>
+ </tr>
+ <tr>
+ <td>Barbara Dierickx</td>
+ <td>PACKED vzw</td>
+ </tr>
+ <tr>
+ <td>Bert Lemmens</td>
+ <td>PACKED vzw</td>
+ </tr>
+ <tr>
+ <td>Sabine Denissen</td>
+ <td>Provincie Antwerpen</td>
+ </tr>
+ <tr>
+ <td>Susy Van Baelen</td>
+ <td>Provincie Antwerpen</td>
+ </tr>
+ <tr>
+ <td>Bram Elewaut</td>
+ <td>Provincie Oost-Vlaanderen</td>
+ </tr>
+ <tr>
+ <td>Eric Smets</td>
+ <td>Stad Gent</td>
+ </tr>
+ <tr>
+ <td>Nathalie Dumon</td>
+ <td>Stad Gent</td>
+ </tr>
+ <tr>
+ <td>Christophe Maes</td>
+ <td>Stad Mechelen</td>
+ </tr>
+ <tr>
+ <td>Jurgen Carlier</td>
+ <td>Tales</td>
+ </tr>
+ <tr>
+ <td>Sebastiaan Jammaers</td>
+ <td>Toerisme Limburg</td>
+ </tr>
+ <tr>
+ <td>Mario Stevens</td>
+ <td>Toerisme Vlaanderen</td>
+ </tr>
+ <tr>
+ <td>Johan Tuytte</td>
+ <td>Westtoer</td>
+ </tr>
+ <tr>
+ <td>Marc Portier</td>
+ <td>Westtoer</td>
+ </tr>
+ <tr>
+ <td>Matty Vincke</td>
+ <td>Westtoer</td>
+ </tr>
+ <tr>
+ <td>Michel Gilté</td>
+ <td>Westtoer</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="about-1">
+
+
+<!--OddPage-->
+<h2 id="about" aria-level="1" role="heading"><span class="secno">4. </span>About</h2>
+
+<p>This document was originally developed under the IWT/TETRA/CORNET Project on Sustainable Mobile Tourism Guides in Flanders (‘Mobiele Toeristische Gidsen in Vlaanderen’) following the <a href="https://joinup.ec.europa.eu/node/43160">Process and Methodology for Developing Core Vocabularies</a>.</p>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="cause-and-context">
+
+<h3 id="causeandcontext" aria-level="2" role="heading"><span class="secno">4.1 </span>Cause and Context</h3>
+
+<p>Among tourist services, operators of tourist attractions, organizers of events and the like, a growing interest in digital mobile guides to support tourists and visitors during tours and visits is to be observed. Many do already have a solution of one kind or another, but it often turns out to be solutions that are not truly sustainable. They are often indeed designed for a particular device or platform, which after a few years, gets outdated. It then occurs, that one has to start all over again if one wants another solution. Also in the underlying systems, there are issues that constitute obstacles.</p>
+
+<p>If one wants to switch to another application, the system is no longer usable, the data cannot be re-used or the whole underlying system has to be rebuilt from scratch. Further, most of these systems are also not compatible with other databases despite the fact that many tourist services or related companies do have a variety of databases with information, images and the like.</p>
+
+<p>The fact that one always has to start all over again, brings a high development costs along. This in turn leads to very little room for innovation. The cost for building and filling the underlying system is so high that there is not enough budget to develop innovative applications which truly meet the needs of consumers.</p>
+
+<p>The IWT-CORNET project “Towards a sustainable mobile tourism guide” was set up to address this issue. The aim of the project was to provide the tourism sector in Flanders and beyond with a re-usable architecture for the exchange of tourism related data and services, upon which innovative applications can be built. As a first step, the stakeholders of the project agreed on the domain model as described in this document. This will serve as a basis to build the underlying system core to our project. Nevertheless, the domain model on its own, as described here, will be published and open sourced so that it can serve a purpose beyond the scope of this project.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="format-1">
+
+<h3 id="format" aria-level="2" role="heading"><span class="secno">4.2 </span>Format</h3>
+
+<p>For each property of each entity we list the expected type, description and if available the reference to the (controlled) list of values that can be filled in or a reference with instructions on how to deal with a certain field.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute/Property</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>(name of the propertyy)</td>
+ <td>(type or object)</td>
+ <td>(what is the property about and how to use it)</td>
+ <td>URL</td>
+ </tr>
+</tbody></table>
+
+<p>The same for the relationships, there is a table for each relationship with the name of the relationship and the target entity.</p>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>(label of the relationship, the predicate)</td>
+ <td>(name of the entity)</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="data-and-metadata">
+
+<h3 id="dataandmetadata" aria-level="2" role="heading"><span class="secno">4.3 </span>Data and Metadata</h3>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="data-types">
+
+<h4 id="datatypes" aria-level="3" role="heading"><span class="secno">4.3.1 </span>Data types</h4>
+
+<p>Several valid datatypes can be used as property values</p>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="text-1">
+
+<h5 id="text" aria-level="4" role="heading"><span class="secno">4.3.1.1 </span>Text</h5>
+
+<p>This is a free field, everything can be stored in here, without a certain formatting. However it is possible that the values are bound by a (controlled) list.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="datetime-1">
+
+<h5 id="datetime" aria-level="4" role="heading"><span class="secno">4.3.1.2 </span>DateTime</h5>
+
+<p>This type ensure a correct formatting of data and time during the exchange.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="periodoftime-1">
+
+<h5 id="periodoftime" aria-level="4" role="heading"><span class="secno">4.3.1.3 </span>PeriodOfTime</h5>
+
+<p>Consists of a startdate, optional end data and/or a clue on how long a certain resource is valid.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="uri-1">
+
+<h5 id="uri" aria-level="4" role="heading"><span class="secno">4.3.1.4 </span>URI</h5>
+
+<p>A HTTP URI, used to refer to other resources or link to web pages.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="boolean-1">
+
+<h5 id="boolean" aria-level="4" role="heading"><span class="secno">4.3.1.5 </span>Boolean</h5>
+
+<p>Is either true (1) or false (0).</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="number-1">
+
+<h5 id="number" aria-level="4" role="heading"><span class="secno">4.3.1.6 </span>Number</h5>
+
+<p>A valid number, no alphabetic characters or non-numeric special characters allowed.</p>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="metadata-types">
+
+<h4 id="metadatatypes" aria-level="3" role="heading"><span class="secno">4.3.2 </span>Metadata types</h4>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="code-1">
+
+<h5 id="code" aria-level="4" role="heading"><span class="secno">4.3.2.1 </span>Code</h5>
+
+<p>In practice, each code is a separate entity with its own recurring attributes. </p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>key</td>
+ <td>Text / URI</td>
+ <td>Idenitification for the code that can be reused across applications as unique identification</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>label</td>
+ <td>Text</td>
+ <td>What the key depicts.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>Text</td>
+ <td>Description of what the key depicts.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>source</td>
+ <td>Text / URI</td>
+ <td>Where the key originates from, organization responsible for maintaining the key</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>version</td>
+ <td>Text</td>
+ <td>Version of the key</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="identification-1">
+
+<h5 id="identification" aria-level="4" role="heading"><span class="secno">4.3.2.2 </span>Identification</h5>
+
+<p>The identification attribute enables the entity to be linked to related entities, while retaining information about the notation, format, author and other metadata regarding how this entity can be identified and linked to its origin. The information model simplifies this by adding a simple ‘identification’ attribute wherever needed to benefit the readability of the model.</p>
+
+<p>In practice, identification is a separate entity with its own attributes. </p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>notation</td>
+ <td>Text</td>
+ <td>The notation of this identifier</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>creator</td>
+ <td>Text</td>
+ <td>The name or description of this identifier.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>schemeAgency</td>
+ <td>URI</td>
+ <td>The URI of the agency or organization responsible for this identifier.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>issued</td>
+ <td>DateTime</td>
+ <td>The date this identifier was issued</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+</section>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="domain-model">
+
+
+<!--OddPage-->
+<h2 id="domainmodel" aria-level="1" role="heading"><span class="secno">5. </span>Domain Model</h2>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="scope-1">
+
+<h3 id="scope" aria-level="2" role="heading"><span class="secno">5.1 </span>Scope</h3>
+
+<p>The domain model as described in this document currently does not describe the entire domain of tourism and everything related to it. When defining the scope of this model, some choices needed to be made to ensure that we would be able to come up with a usable domain model that would be usable within the scope of the project we had in mind.</p>
+
+<p>Hence the consortium involved in the definition of this model agreed to determine the most important parts of such a model and focus on those parts first, before further extending the model. The consortium involved consisted of research organisations, stakeholders from tourism organisations in Flanders as well as SME’s focused on delivering ICT products and services to these tourism organisations.</p>
+
+<figure id="fig-image-alt-text">
+<img alt="image alt text" src="image_1.jpg" />
+<figcaption>Fig. <span class="figno">1</span> <span class="fig-title">image alt text</span></figcaption>
+</figure>
+
+<p>The initial scope of this document was agreed on during a workshop session in Gent, Belgium on January 12 of 2015. Stakeholders first listed and then voted on a wide range of possible aspects of a domain model for tourism. A distinction was made based on the perceived priority of these aspects of the model for users of the data (e.g. app builders) and the perceived priority of aspects from the stance of the providers of the data. The end result of this qualitative excercise was aggregated into the figure below.</p>
+
+<figure id="fig-image-alt-text-1">
+<img alt="image alt text" src="image_2.png" />
+<figcaption>Fig. <span class="figno">2</span> <span class="fig-title">image alt text</span></figcaption>
+</figure>
+
+<p>Those aspects that were voted highest made the initial cut that can be found described in this document. These aspects of the domain model were further defined into the model described in this document in a series of workshops, once again involving all related stakeholders.</p>
+
+<p>Related domains that did not make the initial scope are listed in section 6.2 for later reference and prioritisation.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="related-domains-not-in-scope">
+
+<h3 id="relateddomainsnotinscope" aria-level="2" role="heading"><span class="secno">5.2 </span>Related domains not in scope</h3>
+
+<p>A number of domains can be seen as closely related to the subject of tourism, but are not included in the domain model itself. For example data pertaining to public transport, while relevant to tourism, was deemed to be a much larger thing on its own.</p>
+
+<p>This section of the document can be used to list such related domains linking to existing standards for thel where available. The list below is by no means exhaustive.</p>
+
+<p>We welcome further suggestions of related domains to be listed as well as attempts to link or otherwise integrate them with this domain model.</p>
+
+<figure id="fig-image-alt-text-2">
+<img alt="image alt text" src="image_3.png" />
+<figcaption>Fig. <span class="figno">3</span> <span class="fig-title">image alt text</span></figcaption>
+</figure>
+<table>
+ <tbody><tr>
+ <td>Domain</td>
+ <td>Description</td>
+ <td>More information</td>
+ </tr>
+ <tr>
+ <td>Public Transport</td>
+ <td>Everything pertaining to public transport</td>
+ <td>To be completed</td>
+ </tr>
+ <tr>
+ <td>Pricing</td>
+ <td>Everything that extends our basic model of product pricing</td>
+ <td><a href="http://www.heppnetz.de/ontologies/goodrelations/v1#PriceSpecification">Suggested model</a></td>
+ </tr>
+ <tr>
+ <td>Labels and Licenses</td>
+ <td>Everything pertaining to labels or licenses with regards to touristical products, organisations and other objects</td>
+ <td>To be completed</td>
+ </tr>
+</tbody></table>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="offering-1">
+
+
+<!--OddPage-->
+<h2 id="offering" aria-level="1" role="heading"><span class="secno">6. </span>Offering</h2>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="product-1">
+
+<h3 id="product" aria-level="2" role="heading"><span class="secno">6.1 </span>Product</h3>
+
+<p>The offering of organisations within the broader tourism sector aimed at the tourist as the consumer of said offering.</p>
+
+<p>The product is described as objective as possible in this entity, leaving more elaborate description to be provided as part of the productDescription entity.</p>
+
+<p>Products can be related to each other in a sibling or hierarchical relationship, enabling groups of similar products or products acting as a container for one or more sub-products.</p>
+
+<p>Multiple product types extend the basic description of a product, optionally adding their own specific attributes to the description of a touristic product. These product types are described in the sub-sections following the general description of the Product entity.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the product. The format follows the identification format as described in the metadata type description in section 1 of this document.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>category</td>
+ <td>skos:Concept (List)</td>
+ <td>The reference code(s) that link(s) to a categorisation of the product. The referenced list is specific for each product type. These reference lists are listed in section 3.2.</td>
+ <td>See section 3.2.</td>
+ </tr>
+ <tr>
+ <td>provEntity</td>
+ <td>Provenance Entity</td>
+ <td>A unique identifier linking this entity to the Provenance Entity, which describes the originating source of this record and a historical overview of actions taken with regards to this product.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>nature</td>
+ <td>skos:Concept (List)</td>
+ <td>Whether the product is temporary or permanent in nature. </td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>legal name</td>
+ <td>Text</td>
+ <td>The legal name of the product, not necessarily being the named used in marketing the product towards the consumer.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>commercial name</td>
+ <td>Text</td>
+ <td>The commercial name of the product targeted towards the consumer.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>abbreviation</td>
+ <td>Text</td>
+ <td>An abbreviation of the product name</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>capacity</td>
+ <td>Number</td>
+ <td>The number of consumers (people) this product can accept at any one time.
+e.g. if it is lodging, the capacity is the sum of the official maximum capacity of all the rooms together.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>length</td>
+ <td>Text</td>
+ <td>Description on how long the product takes or lasts, if relevant. This can be added as free text. </td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>language</td>
+ <td>Code (list)</td>
+ <td>list of ISO 639–1 2-letter codes of the language(s) this product is available in.</td>
+ <td><a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">Reference</a></td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>Text</td>
+ <td>An objective description of the product, not necessarily aimed at the consumer.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>slogan</td>
+ <td>Text</td>
+ <td>A slogan for the product.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>bookingURL</td>
+ <td>URI</td>
+ <td>A URI that links to a website where this product can be booked at.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>infoURL</td>
+ <td>URI</td>
+ <td>A URI that links to more information about the product.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>isFree</td>
+ <td>Boolean</td>
+ <td>Whether the product is available free of charge (gratis) or not.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>accessibilityLabel</td>
+ <td>Text or URI</td>
+ <td>Describes the provisions for accessibility of the product or its venue.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>keywords</td>
+ <td>Text (list)</td>
+ <td>A list of keywords that describe the product.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>targetGroup</td>
+ <td>Code (list)</td>
+ <td>The reference code(s) that link(s) to a description of the target group at which this product is aimed. </td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>facilities</td>
+ <td>Code (list)</td>
+ <td>The reference code(s) that link(s) to a description of the facilities available to consumers. This is linked to the product rather than the venue as availability of these facilities may vary depending on the product.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ <td>Cardinality</td>
+ </tr>
+ <tr>
+ <td>rates</td>
+ <td>Price</td>
+ <td>0..n</td>
+ </tr>
+ <tr>
+ <td>Is physically available at</td>
+ <td>Location</td>
+ <td>0..n</td>
+ </tr>
+ <tr>
+ <td>Is detected via</td>
+ <td>LocationDiscovery</td>
+ <td>0..n</td>
+ </tr>
+ <tr>
+ <td>Has opening hours</td>
+ <td>Openinghours</td>
+ <td>0..n</td>
+ </tr>
+ <tr>
+ <td>Is related to </td>
+ <td>Product</td>
+ <td>0..n</td>
+ </tr>
+ <tr>
+ <td>Consists of </td>
+ <td>Product</td>
+ <td>0..n</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Product Types</strong></p>
+
+<p>Various touristic products differ in nature and have the need to be described using a specific set of fields. Product Types extend the generic Product entity. The following product types have been identified (The category reference list to be used for each type is indicated in the second column) :</p>
+<table>
+ <tbody><tr>
+ <td>Product Type</td>
+ <td>Category Reference List</td>
+ </tr>
+ <tr>
+ <td>Arrangement</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>Attraction</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>Event</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>Lodging</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>MICE</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>RECA</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>Recreation</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>Regional Product</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>Route</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+</tbody></table>
+
+<figure id="fig-image-alt-text-3">
+<img alt="image alt text" src="image_4.png" />
+<figcaption>Fig. <span class="figno">4</span> <span class="fig-title">image alt text</span></figcaption>
+</figure>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="arrangement-1">
+
+<h4 id="arrangement" aria-level="3" role="heading"><span class="secno">6.1.1 </span>Arrangement</h4>
+
+<p>A combination of existing products of a variety of types brought together in a single package (e.g. wellness weekend)</p>
+
+<p><a href="https://docs.google.com/document/d/12v1z4Wjdabv-Skck3A8cFWr8NJJLdNaX1hSfiOi_2zw/edit#">More information</a></p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>days</td>
+ <td>Number</td>
+ <td>The number of days the arrangement spans or lasts</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>period</td>
+ <td>Text</td>
+ <td>What period or time of the year this arrangement is available at or focused towards. A textual description that can complement a more structured listing of opening hours. E.g. “Available throughout the summer” or “Weekends only”</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>numberOfPeople</td>
+ <td>Number</td>
+ <td>The amount of people that can participate in the arrangement when a single such arrangement is booked.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="attraction-1">
+
+<h4 id="attraction" aria-level="3" role="heading"><span class="secno">6.1.2 </span>Attraction</h4>
+
+<p>A place, product, installation or facility that offers an appeal or function to tourists in an indoor or outdoor location.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="event-1">
+
+<h4 id="event" aria-level="3" role="heading"><span class="secno">6.1.3 </span>Event</h4>
+
+<p>A touristic product taking place at a specific and limited time, usually with a limited capacity.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="lodging-1">
+
+<h4 id="lodging" aria-level="3" role="heading"><span class="secno">6.1.4 </span>Lodging</h4>
+
+<p>Touristic products that offer sleeping and related facilities.</p>
+<table>
+ <tbody><tr>
+ <td>Relation</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>room</td>
+ <td>Room</td>
+ <td>Links to a hotel’s Room</td>
+ <td></td>
+ </tr>
+</tbody></table>
+
+<p><strong>Room</strong>
+</p><table>
+ <tbody><tr>
+ <td>Relation</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>hasPriceSpecification</td>
+ <td>PriceSpecification</td>
+ <td>Links to the pricespecification of a room.</td>
+ <td><a href="http://ontologies.sti-innsbruck.at/acco/ns.html#CompoundPrice">More details</a></td>
+ </tr>
+ <tr>
+ <td>partOf</td>
+ <td>Lodging</td>
+ <td>Links the room to its lodging facility</td>
+ <td></td>
+ </tr>
+</tbody></table><p></p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="mice-1">
+
+<h4 id="mice" aria-level="3" role="heading"><span class="secno">6.1.5 </span>Mice</h4>
+
+<p><a href="http://en.wikipedia.org/wiki/Meetings,_incentives,_conferencing,_exhibitions">Meetings, incentives, conferencing and exhibitions</a></p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>capacity</td>
+ <td>Number</td>
+ <td>The (legal) maximum capacity of this room in number of people.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="reca-1">
+
+<h4 id="reca" aria-level="3" role="heading"><span class="secno">6.1.6 </span>Reca</h4>
+
+<p>Restaurants, cafe’s and related businesses and facilities</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>servesCuisine</td>
+ <td>Literal </td>
+ <td>Determines the type of kitchen this restaurant servers.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference List</a></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="regional-product">
+
+<h4 id="regionalproduct" aria-level="3" role="heading"><span class="secno">6.1.7 </span>Regional Product</h4>
+
+<p>A product typical for or tied to a specific geographical region.</p>
+
+<p><a href="https://docs.google.com/document/d/1ICb0ILCmhmdxc2JEMOV5hE8rXguCizHKNiokTM7pxH0/edit">More information</a></p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="route-1">
+
+<h4 id="route" aria-level="3" role="heading"><span class="secno">6.1.8 </span>Route</h4>
+
+<p>A route is a trajectory a tourist can follow as a touristical experience. Routes have specific recreationTypes, describing the mode of transport suggested or required for the route (e.g. walking, biking, …).</p>
+
+<p>Routes can either be spatially described using geometry (called a “GemoetryBasedRoute”) or as a network of nodes that should be navigated in a suggested order.</p>
+
+<p>Routes can be equipped with signage, assisting the tourist in navigating the route, using one or more related and visible or otherwise detectable markings.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>openedDate</td>
+ <td>Date</td>
+ <td>The day the route was opened for use.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ <td>Comment</td>
+ </tr>
+ <tr>
+ <td>contactPoint</td>
+ <td>Organization</td>
+ <td>Which organisation can be contacted for more information or questions, with regards to the Route</td>
+ </tr>
+ <tr>
+ <td>maintainedBy</td>
+ <td>Organization</td>
+ <td>Which organisation is responsible for the maintenance of the Route</td>
+ </tr>
+</tbody></table>
+
+<p><strong>GeometryBasedRoute</strong></p>
+
+<p>A route described using a geometric form.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>length</td>
+ <td>Number</td>
+ <td>The total length of the route in meters</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ <td>Comment</td>
+ </tr>
+ <tr>
+ <td>trajectory</td>
+ <td>Geometry</td>
+ <td>A geometric form spanning the route</td>
+ </tr>
+</tbody></table>
+
+<p><strong>EntryPoint</strong></p>
+
+<p>Describes the entry location(s) of a ThemedRoute</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>name</td>
+ <td>text</td>
+ <td>Name of the entry location</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ <td>Comments</td>
+ </tr>
+ <tr>
+ <td>belongsTo</td>
+ <td>ThemedRoute</td>
+ <td>Assigns a location as a possible entry point for</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>Location</td>
+ <td></td>
+ </tr>
+</tbody></table>
+
+<p><strong>NetworkBasedRoute</strong></p>
+
+<p>A description of a route based on a network of NetworkElements</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>length</td>
+ <td>number</td>
+ <td>The total length of the route in meters</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>isClosedLoop</td>
+ <td>boolean</td>
+ <td>determines whether a route is circular (ends where it starts) or not (thus linear)</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>isBothWays</td>
+ <td>boolean</td>
+ <td>indicates whether a route can be followed both ways (start to end and vise versa).</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ <td>Cardinality</td>
+ <td>Comments</td>
+ </tr>
+ <tr>
+ <td>trajectoryDescription (list)</td>
+ <td>NetworkElement </td>
+ <td>2..n</td>
+ <td>The sequence of NetworkElements determines the trajectory.</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Network</strong></p>
+
+<p>A Network is a set of NetworkElements (e.g. Knooppuntennetwerk)</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>belongsTo</td>
+ <td>NetworkGroup</td>
+ </tr>
+</tbody></table>
+
+<p><strong>NetworkGroup</strong></p>
+
+<p>A group of Networks</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>Type</td>
+ <td>Code </td>
+ <td>The reference code(s) that link(s) to a description of the type of network group.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+</tbody></table>
+
+<p><strong>NetworkElement</strong></p>
+
+<p>An individual Connection or Junction in a Network</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ <td>Cardinality</td>
+ </tr>
+ <tr>
+ <td>belongsTo</td>
+ <td>Network</td>
+ <td>1..n</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Connection</strong></p>
+
+<p>A connection between two Junctions in a Network</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>Location</td>
+ <td>The geographical location of the connection</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>distance</td>
+ <td>Number</td>
+ <td>the distance, in kilometers, between the two Junctions of the Network</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>soilType</td>
+ <td>Text</td>
+ <td>The soil type predominant at the connection’s location</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>isOneWayDirection</td>
+ <td>Boolean</td>
+ <td>Describes whether the connection is meant to be followed only from startJunction to endJunction or can also be followed the other way around.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>trajectory</td>
+ <td>Geometry</td>
+ </tr>
+ <tr>
+ <td>startJunction</td>
+ <td>Junction</td>
+ </tr>
+ <tr>
+ <td>endJunction</td>
+ <td>Junction</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Junction</strong></p>
+
+<p>A junction in a Network (e.g. individual Knooppunt)</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>number</td>
+ <td>Number</td>
+ <td>The number assigned to this junction, making it visually recognisable</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>Location</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Signage</strong></p>
+
+<p>Signage lists and describes the visual signs present along the path of a Route that the tourist can use to navigate the Route.</p>
+
+<p><strong>Marker</strong></p>
+
+<p>Markers are the physical and visual entities installed across the path of a Route. Different types of markers extend the general Marker entity.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>Location</td>
+ <td>The geographical location of a Route’s signage marker</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>height</td>
+ <td>Number</td>
+ <td>The height, in meters, at which the marker is positioned</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>imageURI</td>
+ <td>URI</td>
+ <td>A URI pointing to an image of the marker in its proper location</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>Belongs to a</td>
+ <td>Route</td>
+ </tr>
+ <tr>
+ <td>Belongs to a</td>
+ <td>Bearer</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Bearer</strong></p>
+
+<p>Bearers are the physical objects that Markers are installed or placed on, so that they remain fixed in location and visible to the tourist.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>Text</td>
+ <td>Textual description of the type of bearer. No standardised taxonomy exists for this attribute in this version of the model.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>owner</td>
+ <td>Organisation</td>
+ <td>The organisation that owns or is responsible for the bearer.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>Location</td>
+ <td>The geographical location of the bearer.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+
+<p><strong>Notification</strong></p>
+
+<p>A notification regarding the state of a Marker (e.g. obstructed, missing)</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>subject</td>
+ <td>Text</td>
+ <td>A description of the state of a Marker</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>reporter</td>
+ <td>Text</td>
+ <td>Who is the author of the notification</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>status</td>
+ <td>Text</td>
+ <td>Assigns a workflow state on the process behind resolving the notification.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>about</td>
+ <td>Marker</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>Location</td>
+ </tr>
+</tbody></table>
+
+<p><strong>CorrectingAction</strong></p>
+
+<p>An action taken by an Organization towards resolving a Notification</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>date</td>
+ <td>Data</td>
+ <td>Date at which the CorrectingAction is done</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>Text</td>
+ <td>A description of the action</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>Regarding</td>
+ <td>Notification</td>
+ </tr>
+ <tr>
+ <td>executedBy</td>
+ <td>Organisation</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Panel</strong></p>
+
+<p>A marker visualised on a directions panel, standing or hanging.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ </tr>
+</tbody></table>
+
+<p><strong>Sign</strong></p>
+
+<p>A visual sign with an arrow, put up to indicate the direction in a route.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>arrowDirection</td>
+ <td>Code</td>
+ <td>The direction of the arrow on the sign</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>viewDirection</td>
+ <td>Number</td>
+ <td>The bearing, in degrees towards the North, the front of the sign should face. E.g. 90° = East, 315° = North-West</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>trajectoryDirection</td>
+ <td>Text</td>
+ <td>The direction in the trajectory of the Route the arrow points in.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+
+<p><strong>Sticker</strong></p>
+
+<p>A sticker, indicating the direction in a route.</p>
+
+<p><strong>PaintMarker</strong></p>
+
+<p>A painted indication of the direction in a route.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="factoid-1">
+
+<h4 id="factoid" aria-level="3" role="heading"><span class="secno">6.1.9 </span>Factoid</h4>
+
+<p>Interesting facts or events that occurred on a certain place, but not physically present anymore, but interesting to know for people visiting this location.</p>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="organisation-1">
+
+<h3 id="organisation" aria-level="2" role="heading"><span class="secno">6.2 </span>Organisation</h3>
+
+<p>An organisation offering one or more products or services related to the Tourism industry. These could be organisations that offer or organise Products, but plenty of other entities within the model refer to the Organisation entity to describe responsability, contact details or more.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the Organisation.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>legalName</td>
+ <td>Text</td>
+ <td>The legal name of the organisation</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>alternativeName</td>
+ <td>Text</td>
+ <td>An alternative name for the organisation</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>preferredName</td>
+ <td>Text</td>
+ <td>The name preferred for use when displaying the organisation’s name to application users. This can be the value of legalName or alternativeName</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>type_KBO</td>
+ <td>Code</td>
+ <td></td>
+ <td>(V)KBO</td>
+ </tr>
+ <tr>
+ <td>status_KBO</td>
+ <td>Code</td>
+ <td></td>
+ <td>(V)KBO</td>
+ </tr>
+ <tr>
+ <td>activity_NACE</td>
+ <td>Code</td>
+ <td></td>
+ <td>Nace</td>
+ </tr>
+ <tr>
+ <td>registration_KBOnr</td>
+ <td>Text</td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>contactInformation</td>
+ <td>URI</td>
+ <td>uri of where the vcard can be found (either as vcf or rdf)</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>offers</td>
+ <td>Product</td>
+ </tr>
+ <tr>
+ <td>maintains</td>
+ <td>Statistics</td>
+ </tr>
+ <tr>
+ <td>provides</td>
+ <td>ProductChannel</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="price-1">
+
+<h3 id="price" aria-level="2" role="heading"><span class="secno">6.3 </span>Price</h3>
+
+<p>The price of a product or related entity.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>reduction</td>
+ <td>text or URI</td>
+ <td>In case of elaborate reduction schemes, a description or a URI pointing to more information</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>currency</td>
+ <td>Text</td>
+ <td>The currency in which the price is expressed. Described in ISO 4217.</td>
+ <td><a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a></td>
+ </tr>
+ <tr>
+ <td>buy</td>
+ <td>Text</td>
+ <td>The buying price. The price the organisation offering the product paid.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>sell</td>
+ <td>Text</td>
+ <td>The selling price. This is the consumer price.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>validityPeriod</td>
+ <td>Text</td>
+ <td>A description of when this price is valid.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>targetGroup</td>
+ <td>Code (List)</td>
+ <td>Reference to the target group for this Price</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="experience-1">
+
+
+<!--OddPage-->
+<h2 id="experience" aria-level="1" role="heading"><span class="secno">7. </span>Experience</h2>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="productdescription-1">
+
+<h3 id="productdescription" aria-level="2" role="heading"><span class="secno">7.1 </span>ProductDescription</h3>
+
+<p>A product description describes a touristic product in a way so that the description fits a specific target group, end-user context and medium. Multiple ProductDescription entities can refer to the same Product. Descriptions can be multimedial and used on their own or in combination with other descriptions of the same product, when combined in a ProductSelection entity.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the product description. The format follows the identification format as described in the metadata type description in section 1 of this document.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>Type</td>
+ <td>Code</td>
+ <td>The reference code that links to a categorisation of the product description.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>provEntity</td>
+ <td>Provenance</td>
+ <td>A unique identifier linking this entity to the provenance Entity, which describes the originating source of this record.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>Text</td>
+ <td>Describes this product description objectively towards users of the description (not tourists)</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>quality</td>
+ <td>Text</td>
+ <td>Describes the of </td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>Describes </td>
+ <td>Product</td>
+ </tr>
+ <tr>
+ <td>related to</td>
+ <td>Location</td>
+ </tr>
+ <tr>
+ <td>consists of</td>
+ <td>Product</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="creativework-1">
+
+<h3 id="creativework" aria-level="2" role="heading"><span class="secno">7.2 </span>CreativeWork</h3>
+
+<p>Creative Work generalises a ProductDescription or ProductChannel describing tags and social media shares.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>hasTag</td>
+ <td>Text (List)</td>
+ <td>Tags describing the entity</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>shares</td>
+ <td>text (List)</td>
+ <td>A a list of URLs on social media listing posts that share/cite this creativework?</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="productchannel-1">
+
+<h3 id="productchannel" aria-level="2" role="heading"><span class="secno">7.3 </span>ProductChannel</h3>
+
+<p>A Channel publishes one or more ProductDescriptions.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the Channel. The format follows the identification format as described in the metadata type description in section 1 of this document.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>Code (List)</td>
+ <td>The reference code that links to a categorisation of the product description.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>name</td>
+ <td>text</td>
+ <td>The name of this ProductChannel</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>url</td>
+ <td>text</td>
+ <td>The URL for this ProductChannel</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>uriTemplate</td>
+ <td>text</td>
+ <td>“the (optional) uri-template that generates the webreferences to the products published inside this channel, by filling in the named propery-values of the actual products” – the names to use are the attribute-names of the “product” entity in this specification. This allows endusers to predict the deep-link-url inside the publication channel to each specific product.</td>
+ <td><a href="https://tools.ietf.org/html/rfc6570">More information</a></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ <td>Cardinality</td>
+ </tr>
+ <tr>
+ <td>publishes </td>
+ <td>ProductSelection</td>
+ <td>0..n</td>
+ </tr>
+ <tr>
+ <td>publishes</td>
+ <td>ProductDescription</td>
+ <td>0..n</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="productselection-1">
+
+<h3 id="productselection" aria-level="2" role="heading"><span class="secno">7.4 </span>ProductSelection</h3>
+
+<p>The link between a channel and a product. Describes which Products are related to the channel describing the Product.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the Product Selection. The format follows the identification format as described in the metadata type description in section 1 of this document.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>origin</td>
+ <td>provenanceEntity</td>
+ <td>Describes which provenanceEntity provided the selection</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>describes </td>
+ <td>Product</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="publicationissue-1">
+
+<h3 id="publicationissue" aria-level="2" role="heading"><span class="secno">7.5 </span>PublicationIssue</h3>
+
+<p>Describes a specific issue of a product channel (e.g. Magasine issue)</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the PublicationIssue. The format follows the identification format as described in the metadata type description in section 1 of this document.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>provEntity</td>
+ <td>Provenance Entity</td>
+ <td>A unique identifier linking this entity to the Provenance Entity, which describes the originating source of this record and a historical overview of actions taken with regards to it.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>publicationDate</td>
+ <td>Date</td>
+ <td>The date of publication for this PublicationIssue</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>nature</td>
+ <td>Text</td>
+ <td>A free description of the nature of this PublicationIssue</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>url</td>
+ <td>text</td>
+ <td>The URL of the PublicationIssue</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>hasMedium </td>
+ <td>ProductChannel</td>
+ </tr>
+ <tr>
+ <td>describes</td>
+ <td>ProductSelection</td>
+ </tr>
+</tbody></table>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="availability-1">
+
+
+<!--OddPage-->
+<h2 id="availability" aria-level="1" role="heading"><span class="secno">8. </span>Availability</h2>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="location-1">
+
+<h3 id="location" aria-level="2" role="heading"><span class="secno">8.1 </span>Location</h3>
+
+<p>A location describes the physical location at which products or related entities from this model can be found at. A Location can have an Address and a Geometry describing it. A Location can be part of a region but also be related to other Locations: being a parent of one, a child of one, a match of one or being near to one.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the Location. The format follows the identification format as described in the metadata type description in section 1 of this document.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>hasAddress</td>
+ <td>Address</td>
+ </tr>
+ <tr>
+ <td>hasGeometry</td>
+ <td>Geometry</td>
+ </tr>
+ <tr>
+ <td>hasRegion</td>
+ <td>Region</td>
+ </tr>
+ <tr>
+ <td>isParentOf</td>
+ <td>Location</td>
+ </tr>
+ <tr>
+ <td>isChildOf</td>
+ <td>Location</td>
+ </tr>
+ <tr>
+ <td>isExactMatchOf</td>
+ <td>Location</td>
+ </tr>
+ <tr>
+ <td>isNearby</td>
+ <td>Location</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="tourism-region">
+
+<h3 id="tourismregion" aria-level="2" role="heading"><span class="secno">8.2 </span>Tourism Region</h3>
+
+<p>Tourism Regions are geographical regions specifically named and designated for tourism purposes. They may be differently named than the exact geographical region names of an area. The idea here is that each area often comes up with its own naming of geographical areas in terms of tourism. This entity allows such naming.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>label</td>
+ <td>Code (List)</td>
+ <td>The reference code that links to a standardised label naming of the region.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>Code (List)</td>
+ <td>The reference code that links to a standardised description of the region.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="geometry-1">
+
+<h3 id="geometry" aria-level="2" role="heading"><span class="secno">8.3 </span>Geometry</h3>
+
+<p>Describes a Location using a geometric shape positioned on a specific location. Apart from coordinates, the model allows for both WKT (Well known text) as GML (Geography Markup Language) to be used to describe the Geometry.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>lat</td>
+ <td>Text</td>
+ <td>the latitude of a geometry</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>long</td>
+ <td>Text</td>
+ <td>the longitude of a geometry</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>wktString</td>
+ <td>Text</td>
+ <td>The WKT (well known text) string notation of the Geometry</td>
+ <td><a href="http://en.wikipedia.org/wiki/Well-known_text">Reference</a></td>
+ </tr>
+ <tr>
+ <td>gmlDescription</td>
+ <td>Text</td>
+ <td>The GML notation of the Geometry</td>
+ <td><a href="http://en.wikipedia.org/wiki/Geography_Markup_Language">Reference</a></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="address-1">
+
+<h3 id="address" aria-level="2" role="heading"><span class="secno">8.4 </span>Address</h3>
+
+<p>Describes a Location using an address.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>identification</td>
+ <td>Identification</td>
+ <td>A unique identifier for the Address. The format follows the identification format as described in the metadata type description in section 1 of this document.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>fullAddress</td>
+ <td>Text</td>
+ <td>Describes the full address following an INSPIRE/ISA notation</td>
+ <td><a href="http://www.w3.org/ns/locn">Reference</a></td>
+ </tr>
+ <tr>
+ <td>POBox</td>
+ <td>Text</td>
+ <td>The PO Box number</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>thoroughfare</td>
+ <td>Text</td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>locator</td>
+ <td>Text</td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>postal code</td>
+ <td>Text</td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>locality</td>
+ <td>Text</td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>city</td>
+ <td>Text</td>
+ <td></td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>province_AU_L2</td>
+ <td>Text</td>
+ <td>The name of the province
+(INSPIRE Administrative Unit Level 2)</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>country_AU_L1</td>
+ <td>Text</td>
+ <td>The name of the country
+(INSPIRE Administrative Unit Level 1)</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="location-discovery">
+
+<h3 id="locationdiscovery" aria-level="2" role="heading"><span class="secno">8.5 </span>Location Discovery</h3>
+
+<p>LocationDiscovery entries make it possible to indicate how a Product is made discoverable for technologies by using QR, NFC or RFID tags for example. This entity allows the type of discovery technology to scale as new technologies emerge.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>code</td>
+ <td>Text</td>
+ <td>the unique identifier of the LocationDiscover entry</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>Code</td>
+ <td>The reference code that links to a standardised description of the type of location discovery technology.</td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="opening-hours">
+
+<h3 id="openinghours" aria-level="2" role="heading"><span class="secno">8.6 </span>Opening Hours</h3>
+
+<p>Describes the opening hours during which a product is accessible or able to be experienced by tourists. A simple description offers a non-structured way to describe this, while a more structured way to offer the data is made available via OpeninghourSpecifications and OpeninghourCalendar entities.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>Text</td>
+ <td>A textual description of the opening hours. This can be structured in any way. </td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>specifiedBy</td>
+ <td>OpeninghourSpecifications</td>
+ </tr>
+ <tr>
+ <td>calendar</td>
+ <td>OpeninghourCalendar</td>
+ </tr>
+</tbody></table>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="opening-hours-specification">
+
+<h4 id="openinghoursspecification" aria-level="3" role="heading"><span class="secno">8.6.1 </span>Opening Hours Specification</h4>
+
+<p>A structured description of opening hours following the schema.org <a href="http://schema.org/OpeningHoursSpecification">openinghours</a> specification. </p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>closes</td>
+ <td>Time</td>
+ <td>Describes when the Product is closed</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>dayOfWeek</td>
+ <td>DayOfWeek</td>
+ <td>Describes the day of the week the opening hours for this Product are valid.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>opens</td>
+ <td>Time</td>
+ <td>Describes when the Product is opened</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>validFrom</td>
+ <td>DateTime</td>
+ <td>Describes starting when this entry is valid</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>validThrough</td>
+ <td>DateTime</td>
+ <td>Describes until when this entry is valid</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>requiresAppointment</td>
+ <td>Boolean</td>
+ <td>Set to TRUE if an appointment is needed for these opening hours. Set to FALSE if an appointment is not needed. If not included, FALSE is assumed.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="opening-hours-calendar">
+
+<h4 id="openinghourscalendar" aria-level="3" role="heading"><span class="secno">8.6.2 </span>Opening Hours Calendar</h4>
+
+<p>Link to a calendar file describing the opening or closing hours of a Product</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>downloadURLICAL</td>
+ <td>Text</td>
+ <td>The download location of the ICAL file describing the calendar</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>isClosingHours</td>
+ <td>Boolean</td>
+ <td>Indicates whether or not the calendar is a description of the closing times rather than the opening times of a Product. If isClosingHours is not included, then it is assumed to be false.</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="demand-1">
+
+
+<!--OddPage-->
+<h2 id="demand" aria-level="1" role="heading"><span class="secno">9. </span>Demand</h2>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="statistics-1">
+
+<h3 id="statistics" aria-level="2" role="heading"><span class="secno">9.1 </span>Statistics</h3>
+
+<p>Describes any statistics relevant to the tourism sector. Can be related to a specific Product. Statistics are described by linking to one or more Columns, whereas Reports refer to Statistics to pinpoint specific files or resources offering these Statistics.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>keywords</td>
+ <td>Text (List)</td>
+ <td>A list of keywords describing the Statistic</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>primaryKeyColumn</td>
+ <td>Text</td>
+ <td>The name of the Column which acts as the primary key for this Statistic</td>
+ <td></td>
+ </tr>
+</tbody></table>
+<table>
+ <tbody><tr>
+ <td>Relationship</td>
+ <td>Target Entity</td>
+ </tr>
+ <tr>
+ <td>Involves</td>
+ <td>Product</td>
+ </tr>
+ <tr>
+ <td>Has</td>
+ <td>Column</td>
+ </tr>
+ <tr>
+ <td>Has</td>
+ <td>Location</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="column-1">
+
+<h3 id="column" aria-level="2" role="heading"><span class="secno">9.2 </span>Column</h3>
+
+<p>Describes a single Column of a Statistic.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>label</td>
+ <td>Text</td>
+ <td>Labels the column’s header</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>title</td>
+ <td>Text</td>
+ <td>A title for the column</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>Text</td>
+ <td>A description for the column’s content</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>datatype</td>
+ <td>Text</td>
+ <td>The specific datatype the column’s data should be in</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>format</td>
+ <td>Text</td>
+ <td>The specific format the column’s data should be in</td>
+ <td></td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="report-1">
+
+<h3 id="report" aria-level="2" role="heading"><span class="secno">9.3 </span>Report</h3>
+
+<p>Points to a specific report of a Statistic.</p>
+<table>
+ <tbody><tr>
+ <td>Attribute</td>
+ <td>Expected Type</td>
+ <td>Description</td>
+ <td>Reference</td>
+ </tr>
+ <tr>
+ <td>provEntity</td>
+ <td>ProvenanceEntity</td>
+ <td>A unique identifier linking this entity to the Provenance Entity, which describes the originating source of this record and a historical overview of actions taken with regards to this product.</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>downloadURLCSV</td>
+ <td>Text</td>
+ <td>The URL of the direct download location of the Report’s CSV file</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>disclosureDate</td>
+ <td>Date</td>
+ <td>The date on which the report was disclosed</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>period</td>
+ <td>Text</td>
+ <td>The period of time the report covers</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>license</td>
+ <td>Text</td>
+ <td>The license attached to this report</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>targetGroup</td>
+ <td>Code (list)</td>
+ <td>The target group(s) which this report refers to. </td>
+ <td><a href="https://docs.google.com/spreadsheets/d/1rhWRjzGkTqOaKzD16UMZE76fHciCMFcl-gYvU_BTIjU">Reference</a></td>
+ </tr>
+</tbody></table>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="mapping-1">
+
+
+<!--OddPage-->
+<h2 id="mapping" aria-level="1" role="heading"><span class="secno">10. </span>Mapping</h2>
+
+<p>The mapping guidelines below do not aim to redesign or remodel existing IT infrastructure of related data sources, but is intended to form an exchange layer between the various systems. It is a technology neutral specification, this means there is a decoupling of the implementation and the description. In this project meaningful processing of received tourism related data is key for developing smart mobile guides. The serialization ensures a correct representation of the data so it can be reused and interpreted by applications as expected.</p>
+
+<p>The serialization is expressed in RDF. An RDF serialization makes optimal use of existing schemas and vocabularies. This is important so that applications and other RDF derived serializations can be linked maximally to the RDF serialization in this project without complex mapping modules. Furthermore it will guarantee the reuse of existing schemas that model the same or related domains. An additional advantage is that the set of new definitions needed to be introduced remains as limited as possible.</p>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="namespaces-1">
+
+<h3 id="namespaces" aria-level="2" role="heading"><span class="secno">10.1 </span>Namespaces</h3>
+
+<p>The recommended namespace for this vocabulary is</p>
+
+<pre><code>http://w3id.org/ost/ns#
+</code></pre>
+
+<p>and the recommended prefix to be used with it is <code>ost</code></p>
+
+<p>This vocabulary also references other vocabularies, as listed in the table below</p>
+<table>
+ <tbody><tr>
+ <td>Namespace</td>
+ <td>Prefix</td>
+ <td>Managed By</td>
+ <td>Domain</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/ns/org#</td>
+ <td>org</td>
+ <td>W3C GLD</td>
+ <td>Organisations</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/ns/regorg#</td>
+ <td>regorg</td>
+ <td>W3C GLD
+</td>
+ <td>Registered Organisations</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/ns/person#</td>
+ <td>person</td>
+ <td>ISA</td>
+ <td>Persons</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/ns/locn#</td>
+ <td>locn</td>
+ <td>ISA</td>
+ <td>Locations</td>
+ </tr>
+ <tr>
+ <td>http://purl.org/dc/terms/</td>
+ <td>dcterms</td>
+ <td>DCMA</td>
+ <td>Metadata</td>
+ </tr>
+ <tr>
+ <td>http://schema.org/</td>
+ <td>schema</td>
+ <td>schema.org</td>
+ <td>Markup, Metadata</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/2006/vcard/ns#</td>
+ <td>vcard</td>
+ <td>W3C</td>
+ <td>Contact Information</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/ns/adms#</td>
+ <td>adms</td>
+ <td>WRC GLD</td>
+ <td>Standards, Codelists, Asset Descriptions</td>
+ </tr>
+ <tr>
+ <td>http://semweb.mmlab.be/ns/oh#</td>
+ <td>oh</td>
+ <td>OpeningHours.io</td>
+ <td>Opening Hours, Calendars</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/2006/time#</td>
+ <td>time</td>
+ <td>W3C</td>
+ <td>Time</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/ns/prov#</td>
+ <td>prov</td>
+ <td>W3C</td>
+ <td>Provenance</td>
+ </tr>
+ <tr>
+ <td>http://www.w3.org/ns/csvw#</td>
+ <td>csvw</td>
+ <td>W3C</td>
+ <td>Statistical Schemas and Tabular Metadata</td>
+ </tr>
+ <tr>
+ <td>http://purl.org/goodrelations/v1#</td>
+ <td>gr</td>
+ <td>GoodRelations</td>
+ <td>Commercial Goods and Offerings</td>
+ </tr>
+ <tr>
+ <td>http://purl.org/muto/core#</td>
+ <td>muto</td>
+ <td>MUTO</td>
+ <td>Tags</td>
+ </tr>
+ <tr>
+ <td>http://purl.org/acco/ns#</td>
+ <td>acco</td>
+ <td>Hepp Research GmbH</td>
+ <td>Accommodation</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="mappings-1">
+
+<h3 id="mappings" aria-level="2" role="heading"><span class="secno">10.2 </span>Mappings</h3>
+
+<p>We make a distinction between classes and properties. For the classes there is a distinction between primary and secondary classes. Primary classes are the objects that are exchanged as a whole and can have properties. All primary objects must have an identifier. Secondary objects are objects which can be linked to primary objects and they enrich the primary objects. Literal properties should be annotated with their datatype (using XSD base types: string, date, dateTime, integer, float).</p>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="primary-class-mappings">
+
+<h4 id="primaryclassmappings" aria-level="3" role="heading"><span class="secno">10.2.1 </span>Primary Class Mappings</h4>
+<table>
+ <tbody><tr>
+ <td>Class</td>
+ <td>RDF</td>
+ </tr>
+ <tr>
+ <td>Organisation</td>
+ <td>org:Organization</td>
+ </tr>
+ <tr>
+ <td>Location</td>
+ <td>dcterms:Location</td>
+ </tr>
+ <tr>
+ <td>Address</td>
+ <td>locn:Address</td>
+ </tr>
+ <tr>
+ <td>LocationDiscovery</td>
+ <td>ost:LocationDiscovery</td>
+ </tr>
+ <tr>
+ <td>Product</td>
+ <td>ost:Product &lt; gr:Offering</td>
+ </tr>
+ <tr>
+ <td>Price</td>
+ <td>ost:Price &lt; gr:PriceSpecification</td>
+ </tr>
+ <tr>
+ <td>ProductDescription</td>
+ <td>ost:ProductDescription &lt; schema:CreativeWork</td>
+ </tr>
+ <tr>
+ <td>ProductSelection</td>
+ <td>ost:ProductSelection</td>
+ </tr>
+ <tr>
+ <td>ProductChannel</td>
+ <td>ost:ProductChannel &lt; schema:CreativeWork</td>
+ </tr>
+ <tr>
+ <td>PublicationIssue</td>
+ <td>ost:PublicationIssue &lt; schema:PublicationIssue</td>
+ </tr>
+ <tr>
+ <td>Statistics</td>
+ <td>csvw:Schema</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="secondary-class-mappings">
+
+<h4 id="secondaryclassmappings" aria-level="3" role="heading"><span class="secno">10.2.2 </span>Secondary Class Mappings</h4>
+<table>
+ <tbody><tr>
+ <td>Class</td>
+ <td>RDF</td>
+ </tr>
+ <tr>
+ <td>Identification</td>
+ <td>adms:identifier (adms:Identifier)</td>
+ </tr>
+ <tr>
+ <td>Code (all types)</td>
+ <td>skos:Concept</td>
+ </tr>
+ <tr>
+ <td>Provenance Entity</td>
+ <td>prov:Entity</td>
+ </tr>
+ <tr>
+ <td>Contact</td>
+ <td>vcard:VCard</td>
+ </tr>
+ <tr>
+ <td>Geometry</td>
+ <td>locn:Geometry</td>
+ </tr>
+ <tr>
+ <td>OpeningHours</td>
+ <td>oh:OpeningHours</td>
+ </tr>
+ <tr>
+ <td>OpeningHoursSpecification</td>
+ <td>schema:OpeningHoursSpecification</td>
+ </tr>
+ <tr>
+ <td>OpeningHoursCalendar</td>
+ <td>oh:Calendar</td>
+ </tr>
+ <tr>
+ <td>Tourism Region</td>
+ <td>ost:TourismRegion &lt; skos:Concept</td>
+ </tr>
+ <tr>
+ <td>Column</td>
+ <td>csvw:Column</td>
+ </tr>
+ <tr>
+ <td>Target Group</td>
+ <td>ost:TargetGroup &lt; skos:Concept</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="product-and-all-its-subclasses">
+
+<h4 id="productandallitssubclasses" aria-level="3" role="heading"><span class="secno">10.2.3 </span>Product and all its subclasses</h4>
+
+<p>ost:Product, ost:Route, ost:Event, ost:MICE, ost:Lodging, ost:Reca, ost:Attraction, ost:Arrangement, ost:RegionalProduct, ost:Event and ost:Recreation.</p>
+
+<p>Type depicts for product class what specific type it is. I.e. for lodging it can depict if something is a hotel, camping or guesthouse.</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>dcterms:type</td>
+ <td>skos:Concept</td>
+ </tr>
+ <tr>
+ <td>nature</td>
+ <td>ost:nature</td>
+ <td>skos:Concept</td>
+ </tr>
+ <tr>
+ <td>legalName</td>
+ <td>ost:legalName</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>commercialName</td>
+ <td>gr:name</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>abbreviation</td>
+ <td>ost:abbreviation</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>capacity</td>
+ <td>ost:capacity</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>length</td>
+ <td>ost:length</td>
+ <td>dcterms:SizeOrDuration</td>
+ </tr>
+ <tr>
+ <td>language</td>
+ <td>dcterms:language</td>
+ <td>dcterms:LinguisticSystem</td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>gr:description</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>slogan</td>
+ <td>ost:slogan</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>bookingUrl</td>
+ <td>ost:bookingUrl</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>infoUrl</td>
+ <td>ost:infoUrl</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>isFree</td>
+ <td>ost:isFree</td>
+ <td>Boolean</td>
+ </tr>
+ <tr>
+ <td>accessibilityLabel</td>
+ <td>ost:accessibilityLabel</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>keywords</td>
+ <td>dcterms:subject</td>
+ <td>Literal (String)</td>
+ </tr>
+ <tr>
+ <td>facility</td>
+ <td>ost:facility</td>
+ <td>skos:Concept (URI)</td>
+ </tr>
+ <tr>
+ <td>relatedTo</td>
+ <td>skos:related</td>
+ <td>ost:Product (List)</td>
+ </tr>
+ <tr>
+ <td>consistsOf</td>
+ <td>ost:consistsOf</td>
+ <td>ost:Product (List)</td>
+ </tr>
+ <tr>
+ <td>rate</td>
+ <td>ost:rate</td>
+ <td>ost:Price</td>
+ </tr>
+ <tr>
+ <td>targetGroup</td>
+ <td>ost:targetGroup</td>
+ <td>skos:Concept</td>
+ </tr>
+ <tr>
+ <td>is physically available at</td>
+ <td>locn:location</td>
+ <td>locn:Location</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Mice</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>hallName</td>
+ <td>ost:hallName</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>feature</td>
+ <td>ost:feature</td>
+ <td>skos:Concept -&gt; List (Reference)</td>
+ </tr>
+ <tr>
+ <td>dimension</td>
+ <td>ost:dimensions</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>height</td>
+ <td>ost:height</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>numberOfParkingSpots</td>
+ <td>ost:numberOfParkignSpots</td>
+ <td>Integer</td>
+ </tr>
+ <tr>
+ <td>ecoLabels</td>
+ <td>ost:ecoLabels</td>
+ <td>Literal or URI (List)</td>
+ </tr>
+ <tr>
+ <td>hallLayout</td>
+ <td>ost:hallLayout</td>
+ <td>Literal or Geometry</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Lodging</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>room</td>
+ <td>ost:room</td>
+ <td>acco:HotelRoom</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Reca</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>servesCuisine</td>
+ <td>schema:servesCuisine</td>
+ <td>Code</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Arrangement</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>numberOfDays</td>
+ <td>ost:numberOfDays</td>
+ <td>Integer</td>
+ </tr>
+ <tr>
+ <td>period</td>
+ <td>ost:period</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>numberOfPersons</td>
+ <td>ost:numberOFPersons</td>
+ <td>ost:Integer</td>
+ </tr>
+ <tr>
+ <td>schedule</td>
+ <td>ost:schedule</td>
+ <td>Literal or URI</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="route-2">
+
+<h4 id="route" aria-level="3" role="heading"><span class="secno">10.2.4 </span>Route</h4>
+
+<p>A route is either a ThemedRoute, a NetworkBasedRoute or a Network.</p>
+
+<p>General properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>recreationType</td>
+ <td>ost:recreationType</td>
+ <td>skos:Concept (see ReferenceList)</td>
+ </tr>
+ <tr>
+ <td>opened</td>
+ <td>ost:opened</td>
+ <td>Date</td>
+ </tr>
+ <tr>
+ <td>contactPoint</td>
+ <td>ost:contactPoint</td>
+ <td>org:Organization</td>
+ </tr>
+ <tr>
+ <td>maintainedBy</td>
+ <td>ost:maintainedBy</td>
+ <td>org:Organization</td>
+ </tr>
+</tbody></table>
+
+<p>ThemedRoute only properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>trajectory</td>
+ <td>ost:trajectory</td>
+ <td>locn:Geometry</td>
+ </tr>
+ <tr>
+ <td>length</td>
+ <td>ost:length</td>
+ <td>Float</td>
+ </tr>
+</tbody></table>
+
+<p>NetworkBasedRoute only properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>length</td>
+ <td>ost:length</td>
+ <td>Float</td>
+ </tr>
+ <tr>
+ <td>trajectoryDescription</td>
+ <td>ost:trajectoryDescription</td>
+ <td>ost:NetworkElement (List)</td>
+ </tr>
+</tbody></table>
+
+<p>Network only properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>belongsTo</td>
+ <td>ost:belongsTo</td>
+ <td>NetworkGroup</td>
+ </tr>
+</tbody></table>
+
+<p>There are some helper components that describe the routes infrastructure and lay-out.</p>
+
+<p><strong>NetworkGroup</strong></p>
+
+<p>The type is bounded by the specification (see above)</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>ost:networkGroupType</td>
+ <td>Literal</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Connection, Junction, NetworkElement</strong></p>
+
+<p>A NetworkElement is either a Connection (edge) or a Junction (node).</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>belongsTo</td>
+ <td>ost:belongsTo</td>
+ <td>Network</td>
+ </tr>
+</tbody></table>
+
+<p>Connection specific properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>trajectory</td>
+ <td>ost:trajectory</td>
+ <td>locn:Geometry</td>
+ </tr>
+ <tr>
+ <td>soilType</td>
+ <td>ost:soilType</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>isOneWay</td>
+ <td>ost:isOneWay</td>
+ <td>Boolean</td>
+ </tr>
+ <tr>
+ <td>startJunction</td>
+ <td>ost:startJunction</td>
+ <td>ost:Junction</td>
+ </tr>
+ <tr>
+ <td>endJunction</td>
+ <td>ost:endJunction</td>
+ <td>ost:Junction</td>
+ </tr>
+</tbody></table>
+
+<p>Junction specific properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>locn:location</td>
+ <td>locn:Location</td>
+ </tr>
+ <tr>
+ <td>number</td>
+ <td>ost:number</td>
+ <td>Integer</td>
+ </tr>
+</tbody></table>
+
+<p><strong>EntryPoint</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>locn:location</td>
+ <td>locn:Location</td>
+ </tr>
+ <tr>
+ <td>name</td>
+ <td>dcterms:name</td>
+ <td>Literal</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="signage-1">
+
+<h4 id="signage" aria-level="3" role="heading"><span class="secno">10.2.5 </span>Signage</h4>
+
+<p><strong>Marker</strong></p>
+
+<p>A marker is either a Panel, Sign, Sticker or PaintMarker and can have these properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>ost:location</td>
+ <td>locn:Location</td>
+ </tr>
+ <tr>
+ <td>belongsTo</td>
+ <td>ost:belongsTo</td>
+ <td>ost:Route</td>
+ </tr>
+ <tr>
+ <td>bearer</td>
+ <td>ost:hasBearer</td>
+ <td>ost:Bearer</td>
+ </tr>
+ <tr>
+ <td>height</td>
+ <td>schema:height</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>imageURI</td>
+ <td>schema:image</td>
+ <td>URI</td>
+ </tr>
+</tbody></table>
+
+<p>Sign specific properties:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>arrowDirection</td>
+ <td>ost:arrowDirection</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>viewDirection</td>
+ <td>ost:viewDirection</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>trajectoryDirection</td>
+ <td>ost:trajectoryDirection</td>
+ <td>Literal</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Bearer</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>dcterms:type</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>owner</td>
+ <td>ost:hasOwner</td>
+ <td>org:Organization</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>ost:location</td>
+ <td>locn:Location</td>
+ </tr>
+</tbody></table>
+
+<p><strong>Notification</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>reporter</td>
+ <td>ost:reporter</td>
+ <td>Literal or org:Organization</td>
+ </tr>
+ <tr>
+ <td>location</td>
+ <td>ost:location</td>
+ <td>locn:Location</td>
+ </tr>
+ <tr>
+ <td>subject</td>
+ <td>dcterms:subject</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>status</td>
+ <td>ost:status</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>about</td>
+ <td>ost:about</td>
+ <td>ost:Marker</td>
+ </tr>
+</tbody></table>
+
+<p><strong>CorrectingAction</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>date</td>
+ <td>ost:date</td>
+ <td>Date</td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>dcterms:description</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>executedBy</td>
+ <td>ost:executedBy</td>
+ <td>org:organization</td>
+ </tr>
+ <tr>
+ <td>hasNotification</td>
+ <td>ost:hasNotification</td>
+ <td>ost:Notification</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="organization-1">
+
+<h4 id="organization" aria-level="3" role="heading"><span class="secno">10.2.6 </span>Organization</h4>
+
+<p>Fully represented by the W3C Organization and Registered Organization vocabulary. Use the description of <a href="http://www.w3.org/TR/vocab-org/">http://www.w3.org/TR/vocab-org/</a> and <a href="http://www.w3.org/TR/vocab-regorg/">http://www.w3.org/TR/vocab-regorg/</a>.</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>legalName</td>
+ <td>regorg:legalName</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>alternativeName</td>
+ <td>dcterms:alternative</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>type_KBO</td>
+ <td>regorg:orgType</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>status_KBO</td>
+ <td>regorg:orgStatus</td>
+ <td>Literal or skos:Concept</td>
+ </tr>
+ <tr>
+ <td>activity_NACE</td>
+ <td>regorg:orgActivity</td>
+ <td>Literal or skos:Concept</td>
+ </tr>
+ <tr>
+ <td>registration_KBOnr</td>
+ <td>regorg:registration</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>contactinformation</td>
+ <td>gr:description</td>
+ <td>URI (<a href="https://tools.ietf.org/html/rfc6350">VCard</a>)</td>
+ </tr>
+ <tr>
+ <td>offers</td>
+ <td>ost:offers</td>
+ <td>ost:Product</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="price-2">
+
+<h4 id="price" aria-level="3" role="heading"><span class="secno">10.2.7 </span>Price</h4>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>reduction</td>
+ <td>ost:reduction</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>buy</td>
+ <td>ost:buy</td>
+ <td>Float</td>
+ </tr>
+ <tr>
+ <td>sell</td>
+ <td>ost:sell &lt; gr:hasCurrencyValue</td>
+ <td>Float</td>
+ </tr>
+ <tr>
+ <td>currency</td>
+ <td>gr:hasCurrency</td>
+ <td>String</td>
+ </tr>
+ <tr>
+ <td>validityPeriod</td>
+ <td>gr:validFrom, gr:validThrough</td>
+ <td>Date</td>
+ </tr>
+ <tr>
+ <td>targetgroup</td>
+ <td>ost:targetGroup</td>
+ <td>ost:TargetGroup</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="creativework-2">
+
+<h4 id="creativework" aria-level="3" role="heading"><span class="secno">10.2.8 </span>CreativeWork</h4>
+
+<p>CreativeWork as specified here: <a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a></p>
+
+<p>Following properties are common for all specifications of CreativeWork (ProductDescription, ProductChannel and PublicationIssue).</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>tags</td>
+ <td>schema:keywords</td>
+ <td>Literal (List)</td>
+ </tr>
+ <tr>
+ <td>shares</td>
+ <td>ost:shares</td>
+ <td>schema:ShareAction (List)</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="productdescription-2">
+
+<h4 id="productdescription" aria-level="3" role="heading"><span class="secno">10.2.9 </span>ProductDescription</h4>
+
+<p>ProductDescription is a CreativeWork as specified here: <a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a></p>
+
+<p>Following properties are important and relevant for a ProductDescription.</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>dcterms:type</td>
+ <td>skos:Concept</td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>dcterms:description</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>hasTag</td>
+ <td>mtuo:hasTag</td>
+ <td>muto:Tag</td>
+ </tr>
+ <tr>
+ <td>quality</td>
+ <td>schema:quality</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>format</td>
+ <td>schema:format</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>length</td>
+ <td>schema:duration</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>language</td>
+ <td>schema:language</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>license</td>
+ <td>schema:license</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>mediatype</td>
+ <td>ost:mediatype</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>MIMEtype</td>
+ <td>schema:fileFormat</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>creationDate</td>
+ <td>schema:dateCreated</td>
+ <td>Date</td>
+ </tr>
+ <tr>
+ <td>modificationDate</td>
+ <td>schema:dateModified</td>
+ <td>Date</td>
+ </tr>
+ <tr>
+ <td>thumbnailUrl</td>
+ <td>schema:thumbnailUrl</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>previewUrl</td>
+ <td>ost:previewUrl</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>Url</td>
+ <td>schema:url</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>describes</td>
+ <td>ost:describes</td>
+ <td>ost:Product</td>
+ </tr>
+ <tr>
+ <td>consists of</td>
+ <td>ost:consistsOf</td>
+ <td>ost:ProductDescription</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="productselection-2">
+
+<h4 id="productselection" aria-level="3" role="heading"><span class="secno">10.2.10 </span>ProductSelection</h4>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>describes</td>
+ <td>ost:describes</td>
+ <td>ost:Product (List)</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="productchannel-2">
+
+<h4 id="productchannel" aria-level="3" role="heading"><span class="secno">10.2.11 </span>ProductChannel</h4>
+
+<p>ProductChannel is a CreativeWork as specified here: <a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a></p>
+
+<p>Following properties are important and relevant for a ProductChannel.</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>dcterms:type</td>
+ <td>skos:Concept</td>
+ </tr>
+ <tr>
+ <td>name</td>
+ <td>dcterms:name</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>url</td>
+ <td>schema:url</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>urlTemplate</td>
+ <td>ost:urlTemplate</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>publishes</td>
+ <td>ost:publishes</td>
+ <td>ost:ProductSelection</td>
+ </tr>
+ <tr>
+ <td>publishes</td>
+ <td>ost:publishes</td>
+ <td>ost:ProductDescription</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="publicationissue-2">
+
+<h4 id="publicationissue" aria-level="3" role="heading"><span class="secno">10.2.12 </span>PublicationIssue</h4>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>dcterms:type</td>
+ <td>skos:Concept</td>
+ </tr>
+ <tr>
+ <td>name</td>
+ <td>schema:datePublished</td>
+ <td>Date</td>
+ </tr>
+ <tr>
+ <td>url</td>
+ <td>schema:url</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>hasMedium</td>
+ <td>ost:hasMedium</td>
+ <td>ost:ProductChannel</td>
+ </tr>
+ <tr>
+ <td>describes</td>
+ <td>ost:describes</td>
+ <td>ost:ProductSelection</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="openinghours-1">
+
+<h4 id="openinghours" aria-level="3" role="heading"><span class="secno">10.2.13 </span>OpeningHours</h4>
+
+<p><strong>OpeningHoursCalendar</strong></p>
+
+<p>Fully represented by the <a href="http://openinghours.io">http://openingHours.io</a> vocabulary.</p>
+
+<p><strong>OpeningHoursSpecification</strong></p>
+
+<p>Represented by the <a href="http://schema.org/OpeningHoursSpecification">http://schema.org/OpeningHoursSpecification</a>. and extended with the following property:</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>requiresAppointment</td>
+ <td>ost:requiresAppointment</td>
+ <td>Boolean</td>
+ </tr>
+</tbody></table>
+
+<p><strong>LocationDiscovery</strong></p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>code</td>
+ <td>ost:code</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>dcterms:type</td>
+ <td>skos:Concept</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="location-geometry-and-address">
+
+<h4 id="locationgeometryandaddress" aria-level="3" role="heading"><span class="secno">10.2.14 </span>Location, Geometry and Address</h4>
+
+<p>Fully represented by the W3C Location vocabulary. Use the description of http://www.w3.org/ns/locn but where Location itself is used as RDF Resource to refer to Geometry and Address.</p>
+
+<p>Location introduces some extra properties not included in the original vocabulary.</p>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>isNearby</td>
+ <td>ost:isNearby</td>
+ <td>Location</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="statistics-2">
+
+<h4 id="statistics" aria-level="3" role="heading"><span class="secno">10.2.15 </span>Statistics</h4>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>keywords</td>
+ <td>dcterms:subject</td>
+ <td>Literal (List)</td>
+ </tr>
+ <tr>
+ <td>primaryKeyColumn</td>
+ <td>csvw:primaryKey</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>involves</td>
+ <td>ost:involves</td>
+ <td>(olca:rangeIncludes)
+ost:Product OR locn:Location</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="report-2">
+
+<h4 id="report" aria-level="3" role="heading"><span class="secno">10.2.16 </span>Report</h4>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>provEntity</td>
+ <td>prov:entity</td>
+ <td>prov:Entity</td>
+ </tr>
+ <tr>
+ <td>downloadURLCSV</td>
+ <td>ost:downloadURLCSV</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>disclosureDate</td>
+ <td>dcterms:issued</td>
+ <td>Date</td>
+ </tr>
+ <tr>
+ <td>period</td>
+ <td>dcterms:temporal</td>
+ <td>dcterms:PeriodOfTime</td>
+ </tr>
+ <tr>
+ <td>license</td>
+ <td>dcterms:license</td>
+ <td>URI</td>
+ </tr>
+ <tr>
+ <td>targetGroup</td>
+ <td>ost:targetGroup</td>
+ <td>ost:TargetGroup</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="column-2">
+
+<h4 id="column" aria-level="3" role="heading"><span class="secno">10.2.17 </span>Column</h4>
+
+<p>Fully represented by the W3C group on tabular metadata: <a href="http://www.w3.org/TR/tabular-metadata/">http://www.w3.org/TR/tabular-metadata/</a>.</p>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="code-2">
+
+<h4 id="code" aria-level="3" role="heading"><span class="secno">10.2.18 </span>Code</h4>
+<table>
+ <tbody><tr>
+ <td>Property</td>
+ <td>RDF</td>
+ <td>Range</td>
+ </tr>
+ <tr>
+ <td>code</td>
+ <td>dcterms:identifier</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>label</td>
+ <td>ovc:Label</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>description</td>
+ <td>dcterms:description</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>version</td>
+ <td>adms:version</td>
+ <td>Literal</td>
+ </tr>
+ <tr>
+ <td>source agency</td>
+ <td>adms:schemeAgency</td>
+ <td>Literal or URI</td>
+ </tr>
+</tbody></table>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="identification-2">
+
+<h4 id="identification" aria-level="3" role="heading"><span class="secno">10.2.19 </span>Identification</h4>
+
+<p>Fully represented by the ADMS specification identifier: <a href="http://www.w3.org/TR/vocab-adms/#identifier">http://www.w3.org/TR/vocab-adms/#identifier</a>.</p>
+</section>
+</section>
+</section>
+<section typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter" id="change-history">
+
+
+<!--OddPage-->
+<h2 id="changehistory" aria-level="1" role="heading"><span class="secno">11. </span>Change History</h2>
+<table>
+ <tbody><tr>
+ <td>Version</td>
+ <td>Date</td>
+ <td>Notes</td>
+ </tr>
+ <tr>
+ <td>0.9.0</td>
+ <td>04/11/2015</td>
+ <td>Public release of the final draft of this document.</td>
+ </tr>
+ <tr>
+ <td>0.4.0</td>
+ <td>27/04/2015</td>
+ <td>Closed group release of version to obtain feedback from the project’s user group.</td>
+ </tr>
+</tbody></table>
+</section>
+
+<!--- Info about the scripts below: http://www.w3.org/respec/ref.html -->
+
+
+
+
+<style>
+  table tr:first-child {
+      font-weight:bold;
+  }
+
+  tr:nth-child(even) td     { background-color:#eee; }
+
+  img {
+     width: 100%;
+  }
+  img.cc {
+     width: 88px;
+  }
+</style>
+
+
+
+</body></html>
