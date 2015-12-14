@@ -9,4 +9,4 @@ Install instructions here: http://fletcher.github.io/MultiMarkdown-4/installatio
 Generate HTML Specs
 -------------------
 
-	multimarkdown cornet-spec-draft.md --process-html -o cornet-spec.html
+	multimarkdown ost-spec-draft.md --process-html -o ost-spec.html

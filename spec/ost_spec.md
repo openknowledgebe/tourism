@@ -841,7 +841,7 @@ A product typical for or tied to a specific geographical region.
 
 A route is a trajectory a tourist can follow as a touristical experience. Routes have specific recreationTypes, describing the mode of transport suggested or required for the route (e.g. walking, biking, …).
 
-Routes can either be spatially described using geometry (called a "GemoetryBasedRoute") or as a network of nodes that should be navigated in a suggested order.
+Routes can either be spatially described using geometry (called a "GemoetryBasedRoute") or as a network of nodes that should be navigated in a suggested order.
 
 Routes can be equipped with signage, assisting the tourist in navigating the route, using one or more related and visible or otherwise detectable markings.
 
@@ -2040,13 +2040,15 @@ Describes a Location using an address.
   <tr>
     <td>province_AU_L2</td>
     <td>Text</td>
-    <td>The name of the province(INSPIRE Administrative Unit Level 2)</td>
+    <td>The name of the province
+(INSPIRE Administrative Unit Level 2)</td>
     <td></td>
   </tr>
   <tr>
     <td>country_AU_L1</td>
     <td>Text</td>
-    <td>The name of the country(INSPIRE Administrative Unit Level 1)</td>
+    <td>The name of the country
+(INSPIRE Administrative Unit Level 1)</td>
     <td></td>
   </tr>
 </table>
@@ -3638,7 +3640,8 @@ Location introduces some extra properties not included in the original vocabular
   <tr>
     <td>involves</td>
     <td>ost:involves</td>
-    <td>(olca:rangeIncludes)ost:Product OR locn:Location</td>
+    <td>(olca:rangeIncludes)
+ost:Product OR locn:Location</td>
   </tr>
 </table>
 
@@ -3830,7 +3833,7 @@ Fully represented by the ADMS specification identifier: [http://www.w3.org/TR/vo
 	  editors:  [
 		  {
 	        name:       "Raf Buyle"
-		  ,   mailto:     "raf.buyle@onmicrosoft.be"
+		  ,   mailto:     "raf.buyle@okfn.be"
 		  ,   company:    "Open Knowledge Belgium"
 		  ,   companyURL: "http://okfn.be"
 		  },
