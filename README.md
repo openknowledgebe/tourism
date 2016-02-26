@@ -11,10 +11,6 @@ The reference lists that accompany this document are managed on a [shared spread
 
 Any requests regarding the specification or the website should be done by listing an issue on this repository.
 
-# Open Tourism
-
-Website for the Open Tourism working group from Open Knowledge Belgium.
-
 # Deployment
 
 Make sure bower and gulp are installed, run following command in your project root:
