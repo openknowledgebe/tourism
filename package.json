@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-connect": "*",
+    "gulp-open": "*",
+    "gulp-sass": "*"
+  }
+}
