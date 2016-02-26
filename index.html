@@ -1,7 +1,443 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-<title>Open Tourism</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Open Tourism</title>
+    <meta name="description" content="This working group supports digital creativity concerning tourism and hosts an “Open Standard for Tourism” Vocabulary, which is a reusable Ontology for describing tourism data.">
+    <meta name="keywords" content="open, tourism, knowledge, Ghent, Belgium">
+    <meta name="author" content="Open Knowledge Belgium">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Open Tourism" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://tourism.openknowledge.be" />
+    <meta property="og:image" content="http://tourism.openknowledge.be/images/logo-text.png" />
+    <meta property="og:description" content="This working group supports digital creativity concerning tourism and hosts an “Open Standard for Tourism” Vocabulary, which is a reusable Ontology for describing tourism data." />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:title" content="Open Tourism">
+    <meta name="twitter:description" content="This working group supports digital creativity concerning tourism and hosts an “Open Standard for Tourism” Vocabulary, which is a reusable Ontology for describing tourism data. ">
+    <meta name="twitter:image" content="http://tourism.openknowledge.be/images/logo-text.png" />
+    <meta name="twitter:url" content="http://tourism.openknowledge.be" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="dist/css/app.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!--
+        Favicon stuff goes here 
+    -->
 </head>
+
 <body>
-<h1>More details coming soon.</h1>
+    <div id="page-container">
+        <div class="row" id="intro">
+            <div class="container header-container">
+                <div class="col-xs-12">
+                    <img class="header-img" src="images/white-logo.png">
+                    <h1>Open Tourism</h1>
+                    <!--
+                        <h2> Subtitle.</h2> -->
+                    
+                    <p class="intro-description">A community supporting Digital Creativity in Tourism.</p> 
+                </div>
+                <div class="col-xs-12 right" id="nav">
+                    <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i></div>
+                    <ul>
+                        <!--   <li class="scrollTop sliding-middle-out">Open Tourism</li> -->
+                        <li class="scroll sliding-middle-out visible-xs" data-target="getting-started-container">About</li>
+                        <li class="scroll sliding-middle-out" data-target="tools">Tools</li>
+                        <li class="scroll sliding-middle-out" data-target="projects">Projects</li>
+                       <!-- <li class="scroll sliding-middle-out" data-target="achievements">Achievements</li> -->
+                        <li class="scroll sliding-middle-out" data-target="events">Events</li>
+                        <li class="scroll sliding-middle-out" data-target="team">Team</li>
+                        <li class="scroll sliding-middle-out" data-target="partners">Partners</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--
+            About + Quote section
+        -->
+        <div id="getting-started-outer-container">
+            <div class="row" id="getting-started-container">
+                <div class="container">
+                    <div class="row section" id="getting-started">
+                        <div class="col-xs-12 col-md-6">
+                            <h2>About Open Tourism</h2>
+                            <p>
+                                This working group supports digital creativity concerning tourism and hosts an “Open Standard for Tourism” Vocabulary, which is a reusable Ontology for describing tourism data. <br>
+                                Want to help to simplify travelling? Help out commuters? Then contact us.
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <blockquote>
+                                “In the touristic data-landscape openness is not the issue: the essence of the industry runs on its data being available to an audience as big as possible.  In such an environment of multiple sources happily sharing their own part and version of the truth, unfortunately, the issue then is to understand all of it in a coherent way.  This first iteration of the semantic touristic vocabulary is rightfully something that deserves the international attention of the touristic community.”
+                                <br><span class="quote-author">- Marc Portier, ICT Manager Westtoer</span>
+                                <div class="clearfix"></div>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <!--
+                        Subscribe section
+                    -->
+                    <div class="row section">
+                        <div class="col-xs-12">
+                            <h2>Newsletter</h2>
+                            <p class="intro-subscribe">
+                                Join the conversation on our mailinglist!
+                            </p>
+                            <form method="POST" action="http://lists.okfn.org/mailman/subscribe/open-tourism-be">
+                                <div class="form-group">
+                                    <label class="sr-only" for="fullname">Name</label>
+                                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Email address</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="E-mail Adress">
+                                </div>
+                                <button type="submit" name="email-button" class="btn btn-default">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            Tools and Resources section
+        -->
+        <div class="container">
+            <div class="row section" id="tools">
+                <div class="col-xs-12">
+                    <h2>Tools and resources</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 tool">
+                        <a href="https://github.com/openknowledgebe/tourism" target="_blank">
+                            <i class="fa fa-github fa-5x"></i>
+                        </a>
+                        <span>
+                            <a href="https://github.com/openknowledgebe/tourism" target="_blank">Open Tourism developer community</a> on Github. Everything we do is Open Source, and for that reason we use Github to share our data and projects to the world so others can contribute too.
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-md-4 tool">
+                        <a href="http://tourism.openknowledge.be:8080/spec/" target="_blank">
+                            <i class="fa fa-file-code-o fa-5x"></i>
+                        </a>
+                        <span>
+                            The <a href="http://tourism.openknowledge.be:8080/spec/" target="_blank">Open Standard for Tourism Ecosystems Data Specification</a> describes which vocabularies can be applied to describe tourism data, to accelerate digital creativity concerning tourism.
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-md-4 tool">
+                        <a>
+                            <i class="fa fa-file-text-o fa-5x"></i>
+                        </a>
+                        <span>
+                            Paper presented during the 9th international conference on theory and practice of electronic governance in March 2016:
+                            "Providing Interchangeable Open Data to Accelerate Development of Sustainable Regional Mobile Tourist Guides"<br>
+                            Link coming soon.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+            Projects section
+        -->
+        <div class="row" id="projects-container">
+            <div class="container">
+                <div class="row section" id="projects">
+                    <div class="col-xs-12">
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="col-xs-12 col-md-12">
+                        <h3>Towards a sustainable mobile tourism guide</h3>
+                        <p>The  ‘Open Standard for Tourism” Vocabulary is developed in the research project, ‘Towards a sustainable mobile tourism guide’ (Thomas More, iMinds). </p>
+                        <p>Both local governments, tourism organisations as well as developers of apps for the sector will be invited to make Tourism Data more exchangable and resusable for mobile applications.</p>
+                        <p><a class="link-button" href="http://www.mobielegidsen.be" target="_blank">More (Dutch)</a></p>
+                    </div>
+                    <div class="col-xs-12 col-md-12">
+                        <h3>Westtoer - project "Datahub"</h3>
+                        <p>
+                            The DataHub project at Westtoer got its origins in a rather typical view of building a central data-exchange system to control the growing costs of developing and maintaining bridges and mappings to synchronize information between all possible sources of data and the publication channels that should be fed.
+                        </p>
+                        <p>
+                            Rather atypical we avoided the trap of building yet another central system that eventually concedes at only building another system to bridge to, simply because it fails at maintaining its central role. Instead we found ourselves embracing the modern insights of rest-architectures, web-semantics and linked open data.  Combined with a vision of making sure that all parts can be replaced we achieved the paradoxical opposite: the resulting collaboration survives.
+                        </p>
+                        <p>
+                            During the “Mobile Guides” project we got the chance to meet and collaborate with different organizations in the touristic domain struggling with similar perils in the information interchange.  Jointly defining the Touristic Vocabulary and adopting it as soon as possible is fitting our strategy to disseminate the information about our touristic products with an ever wider reach. We like to believe we now have an architecture and vocabulary, but more importantly even an attitude towards exchanging information that is as hospitable as our touristic region itself!
+                        </p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+            Achievements section
+        
+        <div class="container">
+            <div class="row section" id="achievements">
+                <div class="col-xs-12">
+                    <h2>Achievements</h2>
+                </div>
+                <div class="col-xs-12">
+                    <h3>Open Standard for Tourism Ecosystems Data</h3>
+                </div>
+                <div class="col-xs-12">
+                    <p>
+                    short explanation and motivation + link goes here
+                    </p>
+                </div>
+
+                <div class="col-xs-12">
+                    <h2>Vision and context</h2>
+                </div>
+                <div class="col-xs-12">
+                    <p>
+                        This initiative can and will bring a solution to one of the main issues in the field of application development for the tourism and leisure sector. A lot of projects fail because the underlying systems and databases are too difficult to connect or because it is too costly to do. This is a reason why tourism organisations are reluctant to  commision new applications, and it also slows down innovation in this field.
+                    </p>
+                    <p>
+                        The current project is quite unique in that it brings together different actors in the sector: the tourism organisations of all the Flemish provinces, application and database developers, and publishers of touristic and recreational data. By working together to set up the domain model, we ensure that it is shared and supported by the most important players in this sector. This bottom-up approach proves to be far more effective than a top-down one in stimulation different players to work together.  This will have an impact on how tourism organisations and other players in this sector who will develop new databases, websites and mobile applications. Also, other sectors, like the heritage and museum sector, can benefit from the same approach. If they adopt the same domain model, it will be easier to exchange data between these different, but closely related, sectors.
+                    </p>
+                </div>
+            </div>
+        </div>
+        -->
+         <div class="row" id="status-container">
+            <div class="container">
+                <div class="row section" id="status">
+                    <div class="col-xs-12">
+                        <h2>Status of This Initiative</h2>
+                    </div>
+                    <div class="col-xs-12">
+                        <h3>What if…</h3>
+                        <p>
+                            ...the tourist experience  is more diverse than ever, covering a spectrum that goes from the family looking for a nice hotel with guided tours, to a backpacker who travels alone and surfs somebody's couch.
+                        </p>
+                        <p>
+                            However, there is one factor that is common across all kinds of tourists: the need for digital services to get information, plan trips, reserve accommodations, get in touch with other tourists, consult maps to visit places, rate restaurants or share experiences. Imagine we could use the same services in different places around the world without the need for searching new service providers or new apps every time we visit a different place or city.
+                        </p>
+                    </div>
+     
+                    <div class="col-xs-12 col-md-6">
+                        <h3>What is</h3>
+                        <p>
+                            A lot of projects fail because the underlying systems and databases are too difficult to connect or because it is too costly to do. Data are often locked in isolated silos, that can't be reused outside an existing website or mobile app. 
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h3>What could be</h3>
+                        <p>
+                            Linked Open Data aims to connect these solitary pieces of information to other data sources on the web. If each data is linked, we can jump from link to link to retrieve and discover new knowledge: suggesting interesting attractions, thematic walks, or other nearby services.
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                        <h3>A new initiative!</h3>
+                        <p>
+                            There are already good initiatives focusing on reusable apps and data. But we need more Open Data and a common language for machine readable touristic information. Therefore we've joined forces in a new working group which supports digital creativity concerning tourism and host an <a href="http://tourism.openknowledge.be:8080/spec/" target="_blank">“Open Standard for Tourism” Vocabulary</a>, which is a reusable Ontology for describing tourism data.
+                        </p>
+                    </div>
+                                   <div class="col-xs-12 col-md-4">
+                        <blockquote>
+                            “In order to serve tourists better, it is essential that they get as much relevant data as possible. Only when the different data sources are easily available, also for third parties, this is possible.”
+                            <br><span class="quote-author">- Bruno Koninckx, Thomas More</span>
+                            <div class="clearfix"></div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+            Events section
+        -->
+        <div class="row" id="events-container">
+            <div class="container">
+                <div class="row section" id="events">
+                    <div class="col-xs-12">
+                        <h2>Events</h2>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h3>Hackathon, March 5th 2016</h3>
+                        <p>
+                            During the hackathong there will be a community meeting.<br>
+                            This meeting is relevant for those intrested in shaping the future of open tourism: "Supporting Digital Creativity in Tourism".
+                        </p>
+                        <p>
+                            <a class="link-button" target="_blank" href="http://www.mobielegidsen.be/hackathon/">More</a> 
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h3>Open Belgium 2016</h3>
+                        <p>
+                            At Open Belgium 2016 we will be having a workshop about "Linked Open Data publishing and discovery".<br>
+                            We will share and discuss the ‘Open Standard for Tourism Ecosystems Data’, developed by touristic actors in Flanders and a tool for aggregating existing data and mapping it to the tourism vocabulary.
+                        </p>
+                        <p>
+                            <a class="link-button" target="_blank" href="http://2016.openbelgium.be/session/opentourism-linked-open-data-publishing-and-discovery-workshop">More</a> 
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h3>Workshop: Getting Started with Open Tourism Data</h3>
+                        <p>
+                            Workshop organized on 21st of January 2016 in Mechelen, Belgium. The workshop focused on tourism data: publishing raw data, getting from raw data to linked data, hands-on explanation of the tools that facilitate working with tourism data.
+                        </p>
+                        <p>
+                            <a class="link-button" target="_blank" href="https://www.slideshare.net/secret/8vwB5pNO8gMOLY">More</a> 
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h3>Open Belgium 2015</h3>
+                        <p>
+                            During Open Belgium 2015 we had a workshop about the importance of enriching your online content with semantic annotations.<br>
+                            We wrote a blogpost about what we did that day.
+                        </p>
+                        <p>
+                            <a class="link-button" target="_blank" href="http://2015.openbelgium.be/session/open-tourism/">More</a> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+            Team section
+        -->
+        <div class="row" id="team-container">
+            <div class="container">
+                <div class="row section" id="team">
+                    <div class="col-xs-12">
+                        <h2>Team</h2>
+                    </div>
+                    <div class="col-xs-12">
+                        <ul class="team-gallery">
+                            <li>
+                                <img src="images/team/LaurensDeVocht.jpg">
+                                <p class="name">
+                                    Laurens De Vocht<br>
+                                    <a class="link-button" href="https://twitter.com/laurens_d_v"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/laurensdv"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/WouterVandenBosch.jpg">
+                                <p class="name">Wouter Van den Bosch<br>
+                                    <a class="link-button" href="https://twitter.com/mindwraps"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/wvdbosch"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/BrunoKoninckx.jpg">
+                                <p class="name">Bruno Koninckx<br>
+                                    <a class="link-button" href="https://twitter.com/BrunoKon"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/brunokoninckx"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/ErikMannens.png">
+                                <p class="name">Erik Mannens<br>
+                                    <a class="link-button" href="https://twitter.com/erikmannens"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/erikmannens"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/MarcPortier.jpg">
+                                <p class="name">Marc Portier<br>
+                                    <a class="link-button" href="https://twitter.com/mportier"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/marcportier"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/RafBuyle.jpg">
+                                <p class="name">Raf Buyle<br>
+                                    <a class="link-button" href="https://twitter.com/Rafke"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/rafbuyle"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/AnastasiaDimou.jpg">
+                                <p class="name">Anastasia Dimou<br>
+                                    <a class="link-button" href="https://twitter.com/natadimou"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/anastasia-dimou-a501511b"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/SusyVanBaelen.jpg">
+                                <p class="name">Susy Van Baelen<br>
+                                    <a class="link-button" href="https://twitter.com/Susyvanbaelen"><i class="fa fa-twitter"></i> Twitter</a> 
+                                    <a class="link-button" href="https://www.linkedin.com/in/susy-van-baelen-707a527"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="images/team/MarioStevens.jpg">
+                                <p class="name">Mario Stevens<br>
+                                     
+                                    <a class="link-button" href="https://www.linkedin.com/in/mario-stevens-7061705"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12">
+                        <h2>Community</h2>
+                    </div>
+                    <div class="col-xs-12" id="community-pictures">
+                        <a href="images/community/photo1.jpg" data-lightbox="community-lb" data-title="Working hard in the workgroup">
+                            <img src="images/community/photo1_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo2.jpg" data-lightbox="community-lb" data-title="Meetings are of utmost importance">
+                            <img src="images/community/photo2_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo3.jpg" data-lightbox="community-lb" data-title="We sure love meeting...">
+                            <img src="images/community/photo3_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo4.jpg" data-lightbox="community-lb" data-title="...and slideshows!">
+                            <img src="images/community/photo4_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo5.jpg" data-lightbox="community-lb" data-title="Post-meeting mingling">
+                            <img src="images/community/photo5_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo6.jpg" data-lightbox="community-lb" data-title="Time to put the thoughts on post-its">
+                            <img src="images/community/photo6_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo7.jpg" data-lightbox="community-lb" data-title="And the post-its on the board">
+                            <img src="images/community/photo7_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo8.jpg" data-lightbox="community-lb" data-title="We also love post-its">
+                            <img src="images/community/photo8_thumb.jpg">
+                        </a>
+                        <a href="images/community/photo9.jpg" data-lightbox="community-lb" data-title="So many post-its">
+                            <img src="images/community/photo9_thumb.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+            Footer (partners etc.)
+        -->
+        <footer class="row" id="footer">
+            <div class="container">
+                <div class="col-xs-12" id="partners">
+                    <h2>Partners</h2>
+                </div>
+                <div class="col-xs-12 partner-logos">
+                    <a href="http://www.openknowledge.be/" target="_blank"><img src="images/partners/okb.png" alt="Open Knowledge Belgium" title="Open Knowledge Belgium"></a>
+                    <a href="https://www.iminds.be/" target="_blank"><img src="images/partners/imind_l.png" alt="iMinds" title="iMinds"></a>
+                    <a href="https://www.westtoer.be/" target="_blank"><img src="images/partners/westtoer.png" alt="Westtoer" title="WestToer"></a>
+                    <a href="http://www.thomasmore.be/" target="_blank"><img src="images/partners/thomas_more.png" alt="Thomas More" title="Thomas More"></a>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <p>
+                        Powered by OpenKnowledgeBE. Source code freely available on <a href="https://github.com/openknowledgebe/tourism" target="_blank"
+                        title="Open Tourism GitHub repository">GitHub</a>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <p class="text-right">
+                        Developed by <a href="https://twitter.com/sandmeert" target="_blank">@sandmeert</a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="dist/js/app.js"></script>
 </body>
+
+</html>
