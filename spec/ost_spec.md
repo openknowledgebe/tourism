@@ -85,10 +85,6 @@ The ‘user group’ of about 35-40 users consists of: SME’s, not-for-profit o
     <td>Provincie Oost-Vlaanderen</td>
   </tr>
   <tr>
-    <td>Eric Smets</td>
-    <td>Stad Gent</td>
-  </tr>
-  <tr>
     <td>Nathalie Dumon</td>
     <td>Stad Gent</td>
   </tr>
